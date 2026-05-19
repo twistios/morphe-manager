@@ -1,3 +1,6 @@
+# Custom Branch
+This branch contains custom changes I ([@twistios](https://github.com/twistios)) have created for myself or that I discovered from other authors and found useful for me.
+
 <div align="center"> 
 <picture>
     <source
