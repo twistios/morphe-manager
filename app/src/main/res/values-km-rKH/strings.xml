@@ -43,6 +43,7 @@
     <!-- Home Screen - Root Mode -->
     <!-- Patcher Screen -->
     <!-- Patcher Screen - Patcher Steps -->
+    <!-- Battery optimization pre-flight dialog -->
     <!-- Patcher Screen - Patcher Worker -->
     <!-- Patcher Screen - Patcher Messages -->
     <!-- Morphe patches fix YouTube bugs that Google still has not fixed. -->
@@ -75,6 +76,7 @@
     <!-- Settings - Advanced Tab - Patch Options Section: Hide Shorts -->
     <!-- Settings - System Tab - Installer Section -->
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">ការបង្កើនប្រសិទ្ធភាពថ្ម</string>
     <!-- Settings - System Tab - Import and export keystore -->
     <string name="settings_system_import_keystore_dialog_button">នាំចូល</string>
     <!-- Settings - System Tab - Import and Export Manager Settings -->

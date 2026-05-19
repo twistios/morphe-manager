@@ -162,8 +162,7 @@ private fun PatchSelectionManagementDialogContent(
     onShowPatchDetails: (PatchDetailsTarget) -> Unit
 ) {
     val openImportAllSelectionsPicker = rememberAdaptiveFilePicker(
-        mimeTypes = arrayOf(JSON_MIMETYPE, TEXT_MIMETYPE),
-        chooserTitle = stringResource(R.string.settings_system_patch_selections_title)
+        mimeTypes = arrayOf(JSON_MIMETYPE, TEXT_MIMETYPE)
     ) { uri ->
         uri?.let { importExportViewModel.importAllSelections(it) }
     }
@@ -254,55 +253,53 @@ private fun SelectionList(
     onSetResetTarget: (ResetTarget) -> Unit,
     onShowPatchDetails: (PatchDetailsTarget) -> Unit
 ) {
-    Column(
+    LazyColumn(
         modifier = Modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+        verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         // Summary box
-        InfoBox(
-            title = pluralStringResource(
-                R.plurals.package_count,
-                selections.size,
-                selections.size
-            ),
-            containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.3f),
-            titleColor = MaterialTheme.colorScheme.primary,
-            icon = Icons.Outlined.Tune
-        ) {
-            Text(
-                text = pluralStringResource(
-                    R.plurals.patch_selection_total_patches,
-                    totalSelections,
-                    totalSelections
+        item(key = "summary") {
+            InfoBox(
+                title = pluralStringResource(
+                    R.plurals.package_count,
+                    selections.size,
+                    selections.size
                 ),
-                style = MaterialTheme.typography.bodyMedium,
-                color = LocalDialogSecondaryTextColor.current
-            )
+                containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.3f),
+                titleColor = MaterialTheme.colorScheme.primary,
+                icon = Icons.Outlined.Tune
+            ) {
+                Text(
+                    text = pluralStringResource(
+                        R.plurals.patch_selection_total_patches,
+                        totalSelections,
+                        totalSelections
+                    ),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = LocalDialogSecondaryTextColor.current
+                )
+            }
         }
 
         // List of packages with selections
-        LazyColumn(
-            verticalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            items(
-                items = selections.entries.toList(),
-                key = { it.key }
-            ) { (packageName, bundleMap) ->
-                PackageSelectionItem(
-                    packageName = packageName,
-                    bundleMap = bundleMap,
-                    bundleNames = bundleNames,
-                    settingsViewModel = settingsViewModel,
-                    importExportViewModel = importExportViewModel,
-                    onResetPackage = {
-                        onSetResetTarget(ResetTarget.Package(packageName))
-                    },
-                    onResetPackageBundle = { bundleUid ->
-                        onSetResetTarget(ResetTarget.PackageBundle(packageName, bundleUid))
-                    },
-                    onShowPatchDetails = onShowPatchDetails
-                )
-            }
+        items(
+            items = selections.entries.toList(),
+            key = { it.key }
+        ) { (packageName, bundleMap) ->
+            PackageSelectionItem(
+                packageName = packageName,
+                bundleMap = bundleMap,
+                bundleNames = bundleNames,
+                settingsViewModel = settingsViewModel,
+                importExportViewModel = importExportViewModel,
+                onResetPackage = {
+                    onSetResetTarget(ResetTarget.Package(packageName))
+                },
+                onResetPackageBundle = { bundleUid ->
+                    onSetResetTarget(ResetTarget.PackageBundle(packageName, bundleUid))
+                },
+                onShowPatchDetails = onShowPatchDetails
+            )
         }
     }
 }

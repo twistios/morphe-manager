@@ -175,6 +175,7 @@
     <string name="patcher_step_load_patches">Cargando parches</string>
     <string name="patcher_step_group_patching">Parcheando</string>
     <string name="patcher_step_group_saving">Gardando</string>
+    <!-- Battery optimization pre-flight dialog -->
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Parcheado en progreso...</string>
     <string name="patcher_notification_text">Toque para volver ao parcheador</string>
@@ -219,6 +220,7 @@
     <!-- Settings - Advanced Tab - Patch Options Section: Hide Shorts -->
     <!-- Settings - System Tab - Installer Section -->
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Optimización de batería</string>
     <!-- Settings - System Tab - Import and export keystore -->
     <string name="settings_system_import_keystore_dialog_button">Importar</string>
     <!-- Settings - System Tab - Import and Export Manager Settings -->

@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Sí, ayúdame a encontrar un APK</string>
     <string name="home_apk_availability_no">No, ya tengo un APK</string>
     <string name="home_apk_use_saved_with_version">Usar APK guardado (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Usar APK instalada (v%s)</string>
     <string name="home_app_info_no_saved_apk">No hay APK guardado. Para aplicar los parches será necesario seleccionar el archivo APK nuevamente.</string>
     <string name="home_version_requires_android">Requiere Android %s o superior</string>
     <string name="home_apk_no_compatible_versions_title">No compatible en este dispositivo</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">No se pudo leer el archivo. Verifique que \'Almacenamiento externo\' no esté restringido por la batería</string>
     <string name="home_invalid_apk_not_an_apk">El archivo seleccionado no es un APK válido</string>
     <string name="home_invalid_apk_io_error">No se pudo abrir el archivo. Intente nuevamente</string>
+    <string name="home_external_apk_expert_mode_required">Esta función solo está disponible en modo Experto</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Modo experto</string>
     <string name="expert_mode_search">Buscar parches</string>
     <string name="expert_mode_proceed">Proceder al parcheado</string>
     <string name="expert_mode_disable_all">Desactivar todo</string>
+    <string name="expert_mode_disable_all_done">Todos los parches desactivados</string>
     <string name="expert_mode_enable_all">Activar todo</string>
+    <string name="expert_mode_enable_all_done">Todos los parches activados</string>
     <string name="expert_mode_reset_to_default">Activar parches recomendados</string>
+    <string name="expert_mode_reset_to_default_done">Parches recomendados aplicados</string>
     <string name="expert_mode_restore_saved">Restaurar selección guardada</string>
+    <string name="expert_mode_restore_saved_done">Selección guardada restaurada</string>
     <string name="expert_mode_no_results">No se encontraron parches</string>
     <string name="expert_mode_universal_patches">Parches universales</string>
     <string name="expert_mode_new_patches">Nuevo</string>
@@ -185,6 +191,7 @@ Para obtener los mejores resultados, esta aplicación recomienda parchear un &lt
     <string name="patch_option_enter_number">Ingresar número</string>
     <string name="patch_option_enter_decimal">Ingresar decimal</string>
     <string name="patch_option_pick_folder">Elegir carpeta</string>
+    <string name="patch_option_pick_file">Seleccionar archivo</string>
     <string name="patch_option_list_duplicate">Este valor ya existe</string>
     <string name="patch_option_list_empty">El valor no puede estar vacío</string>
     <string name="patch_option_list_empty_state">No se han añadido valores todavía</string>
@@ -263,6 +270,11 @@ Para obtener los mejores resultados, esta aplicación recomienda parchear un &lt
     <string name="patcher_unknown_error">Ocurrió un error desconocido</string>
     <string name="patcher_conflict_title">Conflicto de paquete</string>
     <string name="patcher_conflict_subtitle">Debe desinstalar la versión existente</string>
+    <string name="patcher_conflict_hint">La aplicación parcheada utiliza un certificado diferente al de la versión instalada. Al desinstalarla, se borrarán todos los datos de la aplicación.</string>
+    <string name="patcher_installed_conflict_title">Desinstalación requerida</string>
+    <string name="patcher_installed_conflict_body">"Morphe firma las aplicaciones parcheadas con su propio certificado, que es diferente del original. Android requiere eliminar la versión existente antes de que se pueda instalar la aplicación parcheada.
+
+Desinstalar borrará permanentemente todos los datos de la aplicación."</string>
     <string name="patcher_install_error_title">Error de instalación</string>
     <string name="patcher_install_error_subtitle">Intente desinstalar y volver a instalar</string>
     <string name="patcher_ready_to_install_subtitle">Pulse el botón de abajo para instalar</string>
@@ -288,6 +300,10 @@ Para obtener los mejores resultados, esta aplicación recomienda parchear un &lt
     <string name="patcher_step_group_saving">Guardando</string>
     <string name="patcher_step_write_patched">Escribiendo archivo APK parcheado</string>
     <string name="patcher_step_sign_apk">Firmando archivo APK parcheado</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Protección de parcheo en segundo plano</string>
+    <string name="battery_optimization_dialog_description">Algunos dispositivos pueden detener el parcheador cuando la aplicación se minimiza. Permita que Morphe se ejecute sin restricciones de batería para garantizar que el parcheo se complete de forma confiable.</string>
+    <string name="battery_optimization_not_now">Ahora no</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Aplicando parches en curso...</string>
     <string name="patcher_notification_text">Toca para volver al parcheador</string>
@@ -554,6 +570,10 @@ Las dimensiones de la imagen deben ser las siguientes:
     <string name="settings_prompt_installer_on_install">Mostrar el diálogo de selección de instalador cada vez que instales una aplicación parcheada.</string>
     <string name="settings_prompt_installer_on_install_description">Mostrar el diálogo de selección de instalador cada vez que instales una aplicación parcheada.</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Optimización de batería</string>
+    <string name="settings_system_battery_optimization_description">Evita que el sistema detenga el parcheador cuando Morphe se minimiza</string>
+    <string name="settings_system_battery_optimization_excluded">Excluido</string>
+    <string name="settings_system_battery_optimization_not_excluded">No excluido</string>
     <string name="settings_system_performance">Rendimiento</string>
     <string name="settings_system_process_runtime">Tiempo de ejecución del proceso</string>
     <string name="settings_system_process_runtime_description">Ejecutar parches en un proceso separado para mayor estabilidad</string>
@@ -680,6 +700,8 @@ Las dimensiones de la imagen deben ser las siguientes:
     <string name="disabled">Desactivado</string>
     <string name="selected">Seleccionado</string>
     <string name="not_selected">No seleccionado</string>
+    <string name="select_all">Seleccionar todo</string>
+    <string name="deselect_all">Desmarcar todo</string>
     <string name="rename">Renombrar</string>
     <string name="import_">Importar</string>
     <string name="export">Exportar</string>

@@ -102,6 +102,7 @@
     <string name="home_apk_availability_yes">হ্যাঁ, আমাকে একটি APK খুঁজতে সাহায্য করুন</string>
     <string name="home_apk_availability_no">না, আমি ইতিমধ্যে একটি APK পেয়েছি</string>
     <string name="home_apk_use_saved_with_version">বর্তমান সংরক্ষিত APK (v%s) ব্যবহার করুন</string>
+    <string name="home_apk_use_installed_with_version">APK (v%s) ব্যবহার করুন</string>
     <string name="home_app_info_no_saved_apk">কোন সংরক্ষিত APK নেই। প্যাচিংয়ের জন্য আবার APK ফাইল নির্বাচন করতে হবে</string>
     <string name="home_version_requires_android">Android %s+ প্রয়োজন</string>
     <string name="home_apk_no_compatible_versions_title">এই ডিভাইসে সমর্থিত নয়</string>
@@ -128,14 +129,19 @@
     <string name="home_invalid_apk_unreadable">ফাইলটি পড়া যায়নি। \'এক্সটার্নাল স্টোরেজ\' ব্যাটারি দ্বারা সীমাবদ্ধ কিনা তা পরীক্ষা করুন</string>
     <string name="home_invalid_apk_not_an_apk">নির্বাচিত ফাইলটি একটি বৈধ APK নয়</string>
     <string name="home_invalid_apk_io_error">ফাইলটি খুলতে ব্যর্থ। অনুগ্রহ করে আবার চেষ্টা করুন</string>
+    <string name="home_external_apk_expert_mode_required">এই বৈশিষ্ট্যটি শুধুমাত্র বিশেষজ্ঞ মোডে উপলব্ধ</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">এক্সপার্ট মোড</string>
     <string name="expert_mode_search">প্যাচ খুঁজুন</string>
     <string name="expert_mode_proceed">প্যাচিং শুরু করুন</string>
     <string name="expert_mode_disable_all">সবকিছু নিষ্ক্রিয় করুন</string>
+    <string name="expert_mode_disable_all_done">সমস্ত প্যাচ নিষ্ক্রিয় করা হয়েছে</string>
     <string name="expert_mode_enable_all">সবকিছুক্ষমতাকার্তা করুন</string>
+    <string name="expert_mode_enable_all_done">সমস্ত প্যাচ সক্রিয় করা হয়েছে</string>
     <string name="expert_mode_reset_to_default">প্রস্তাবিত প্যাচগুলি সক্ষম করুন</string>
+    <string name="expert_mode_reset_to_default_done">সুপারিশ করা প্যাচগুলি প্রয়োগ করা হয়েছে</string>
     <string name="expert_mode_restore_saved">সংরক্ষিত নির্বাচন পুনরুদ্ধার করুন</string>
+    <string name="expert_mode_restore_saved_done">সংরক্ষিত নির্বাচন পুনরুদ্ধার করা হয়েছে</string>
     <string name="expert_mode_no_results">কোনো প্যাচ পাওয়া যায়নি</string>
     <string name="expert_mode_universal_patches">সার্বজনীন প্যাচ</string>
     <string name="expert_mode_new_patches">নতুন</string>
@@ -182,6 +188,7 @@
     <string name="patch_option_enter_number">সংখ্যা দিন</string>
     <string name="patch_option_enter_decimal">ডেসিমাল দিন</string>
     <string name="patch_option_pick_folder">ফোল্ডার নির্বাচন করুন</string>
+    <string name="patch_option_pick_file">ফাইল নির্বাচন করুন</string>
     <string name="patch_option_list_duplicate">এই মানটি ইতিমধ্যে বিদ্যমান</string>
     <string name="patch_option_list_empty">মানটি খালি হতে পারে না</string>
     <string name="patch_option_list_empty_state">এখনো কোনো মান যোগ করা হয়নি</string>
@@ -260,6 +267,11 @@
     <string name="patcher_unknown_error">অজানা ত্রুটি ঘটেছে</string>
     <string name="patcher_conflict_title">প্যাকেজ দ্বন্দ্ব</string>
     <string name="patcher_conflict_subtitle">আপনাকে বিদ্যমান সংস্করণটি আনইনস্টল করতে হবে</string>
+    <string name="patcher_conflict_hint">প্যাচ করা অ্যাপটি ইনস্টল করা সংস্করণের চেয়ে আলাদা সার্টিফিকেট ব্যবহার করে। আনইনস্টল করলে অ্যাপের সমস্ত ডেটা মুছে যাবে।</string>
+    <string name="patcher_installed_conflict_title">আনইনস্টল করা প্রয়োজন</string>
+    <string name="patcher_installed_conflict_body">"Morphe তার নিজস্ব সার্টিফিকেট দিয়ে প্যাচ করা অ্যাপগুলিতে স্বাক্ষর করে, যা মূলটির থেকে আলাদা। প্যাচ করা অ্যাপ ইনস্টল করার আগে, বিদ্যমান সংস্করণটি সরিয়ে ফেলতে Android-এর প্রয়োজন।
+
+আনইনস্টল করলে সমস্ত অ্যাপের ডেটা স্থায়ীভাবে মুছে যাবে"</string>
     <string name="patcher_install_error_title">ইনস্টলেশন ত্রুটি</string>
     <string name="patcher_install_error_subtitle">আনইনস্টল করে আবার ইনস্টল করার চেষ্টা করুন</string>
     <string name="patcher_ready_to_install_subtitle">ইনস্টল করতে নিচের বোতামটি টিপুন</string>
@@ -285,6 +297,10 @@
     <string name="patcher_step_group_saving">সংরক্ষণ</string>
     <string name="patcher_step_write_patched">প্যাচযুক্ত APK ফাইল লেখা হচ্ছে</string>
     <string name="patcher_step_sign_apk">প্যাচ করা APK ফাইল সাইন করা হচ্ছে</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">ব্যাকগ্রাউন্ড প্যাচিং সুরক্ষা</string>
+    <string name="battery_optimization_dialog_description">কিছু ডিভাইস অ্যাপটি মিনিমাইজ করা হলে প্যাচার বন্ধ করতে পারে। প্যাচিং নির্ভরযোগ্যভাবে সম্পন্ন করার জন্য Morphe-কে ব্যাটারি সীমাবদ্ধতা ছাড়াই চলতে দেওয়ার অনুমতি দিন</string>
+    <string name="battery_optimization_not_now">এখন নয়</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">প্যাচিং চলছে…</string>
     <string name="patcher_notification_text">প্যাচার-এ ফিরে যেতে ট্যাপ করুন</string>
@@ -540,6 +556,10 @@ morphe_adaptive_monochrome_custom.xml
     <string name="settings_prompt_installer_on_install">ইনস্টল করলে ইনস্টলার নির্বাচন ডায়ালগ প্রদর্শন করুন</string>
     <string name="settings_prompt_installer_on_install_description">প্রতি ইনস্টল করলে প্যাচড অ্যাপের জন্য ইনস্টলার নির্বাচন ডায়ালগ প্রদর্শন করুন</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">ব্যাটারি অপটিমাইজেশন</string>
+    <string name="settings_system_battery_optimization_description">মর্ফে মিনিমাইজ করা হলে প্যাচার বন্ধ হওয়া থেকে সিস্টেমকে বিরত রাখে</string>
+    <string name="settings_system_battery_optimization_excluded">বাদ দেওয়া হয়েছে</string>
+    <string name="settings_system_battery_optimization_not_excluded">বাদ দেওয়া হয়নি</string>
     <string name="settings_system_performance">প্রোফাইল</string>
     <string name="settings_system_process_runtime">প্রক্রিয় রান্টাইম</string>
     <string name="settings_system_process_runtime_description">প্যাচিংকে পৃথক প্রক্রিয় রান্টাইম ব্যবহার করে আরও স্থিতিশীলতা সক্রিয় করুন</string>
@@ -668,6 +688,8 @@ morphe_adaptive_monochrome_custom.xml
     <string name="disabled">নিষ্ক্রিয় হয়েছে</string>
     <string name="selected">নির্বাচিত</string>
     <string name="not_selected">নির্বাচিত নয়</string>
+    <string name="select_all">সবগুলি নির্বাচন করুন</string>
+    <string name="deselect_all">সবগুলি নির্বাচন বাতিল করুন</string>
     <string name="rename">রেনেম করুন</string>
     <string name="import_">আমদানি করুন</string>
     <string name="export">এক্সপোর্ট করুন</string>

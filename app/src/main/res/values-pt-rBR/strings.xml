@@ -53,9 +53,9 @@
     <!-- Playful exaggeration, making patching feel heroic -->
     <string name="home_greeting_9">Salvando apps de si mesmos desde hoje</string>
     <!-- Light sarcasm, casual and tech-savvy humor -->
-    <string name="home_greeting_10">Movido a cafeína e boas correções</string>
+    <string name="home_greeting_10">Movido a cafeína e bons patches</string>
     <!-- Home Screen - Sources Management -->
-    <string name="sources_management_title">Fontes de correção</string>
+    <string name="sources_management_title">Fontes de patches</string>
     <string name="sources_management_open_in_browser">Abrir links no navegador</string>
     <string name="sources_management_failed_to_open_url">Falha ao abrir URL</string>
     <string name="sources_management_prerelease_toggle">Usar correções de pré-lançamento</string>
@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Sim, me ajude a encontrar um APK</string>
     <string name="home_apk_availability_no">Não, eu já tenho um APK</string>
     <string name="home_apk_use_saved_with_version">Use saved APK (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Usar APK instalado (v%s)</string>
     <string name="home_app_info_no_saved_apk">Não há APK salvo. O patch exigirá a seleção do arquivo APK novamente</string>
     <string name="home_version_requires_android">Requer Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Não suportado neste dispositivo</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">Não foi possível ler o arquivo. Verifique se o \'Armazenamento Externo\' não está com o uso da bateria restrito</string>
     <string name="home_invalid_apk_not_an_apk">O arquivo selecionado não é um APK válido</string>
     <string name="home_invalid_apk_io_error">Falha ao abrir o arquivo. Tente novamente</string>
+    <string name="home_external_apk_expert_mode_required">Este recurso está disponível apenas no modo Expert</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Modo expert</string>
     <string name="expert_mode_search">Procurar patches</string>
     <string name="expert_mode_proceed">Iniciar a atualização</string>
     <string name="expert_mode_disable_all">Desativar todos</string>
+    <string name="expert_mode_disable_all_done">Todos os patches desativados</string>
     <string name="expert_mode_enable_all">Ativar todos</string>
+    <string name="expert_mode_enable_all_done">Todos os patches ativados</string>
     <string name="expert_mode_reset_to_default">Habilitar patches recomendados</string>
+    <string name="expert_mode_reset_to_default_done">Patches recomendados aplicados</string>
     <string name="expert_mode_restore_saved">Restaurar seleção salva</string>
+    <string name="expert_mode_restore_saved_done">Seleção salva restaurada</string>
     <string name="expert_mode_no_results">Nenhum patch encontrado</string>
     <string name="expert_mode_universal_patches">Patches universais</string>
     <string name="expert_mode_new_patches">Novo</string>
@@ -185,6 +191,7 @@ Para obter os melhores resultados, este aplicativo recomenda corrigir um(a) &lt;
     <string name="patch_option_enter_number">Digite um número</string>
     <string name="patch_option_enter_decimal">Digite um decimal</string>
     <string name="patch_option_pick_folder">Selecionar pasta</string>
+    <string name="patch_option_pick_file">Selecionar arquivo</string>
     <string name="patch_option_list_duplicate">Este valor já existe</string>
     <string name="patch_option_list_empty">Valor não pode estar vazio</string>
     <string name="patch_option_list_empty_state">Nenhum valor adicionado ainda</string>
@@ -263,6 +270,11 @@ Para obter os melhores resultados, este aplicativo recomenda corrigir um(a) &lt;
     <string name="patcher_unknown_error">Ocorreu um erro desconhecido</string>
     <string name="patcher_conflict_title">Conflito de pacote</string>
     <string name="patcher_conflict_subtitle">Você precisa desinstalar a versão existente</string>
+    <string name="patcher_conflict_hint">O aplicativo corrigido usa um certificado diferente da versão instalada. Desinstalar irá apagar todos os dados do aplicativo.</string>
+    <string name="patcher_installed_conflict_title">Desinstalação necessária</string>
+    <string name="patcher_installed_conflict_body">"O Morphe assina aplicativos corrigidos com seu próprio certificado, que é diferente do original. O Android exige a remoção da versão existente antes que o aplicativo corrigido possa ser instalado.
+
+A desinstalação apagará permanentemente todos os dados do aplicativo."</string>
     <string name="patcher_install_error_title">Erro de instalação</string>
     <string name="patcher_install_error_subtitle">Tente desinstalar e instalar novamente</string>
     <string name="patcher_ready_to_install_subtitle">Pressione o botão abaixo para instalar</string>
@@ -288,6 +300,10 @@ Para obter os melhores resultados, este aplicativo recomenda corrigir um(a) &lt;
     <string name="patcher_step_group_saving">Salvando</string>
     <string name="patcher_step_write_patched">Escrevendo arquivo APK patchado</string>
     <string name="patcher_step_sign_apk">Assinando arquivo APK patchado</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Proteção contra aplicação de patches em segundo plano</string>
+    <string name="battery_optimization_dialog_description">Alguns dispositivos podem interromper o aplicativo de patches quando minimizado. Permita que o Morphe seja executado sem restrições de bateria para garantir que a aplicação de patches seja concluída de forma confiável</string>
+    <string name="battery_optimization_not_now">Não agora</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patch em andamento…</string>
     <string name="patcher_notification_text">Toque para retornar ao patcher</string>
@@ -554,6 +570,10 @@ As dimensões das imagens devem ser as seguintes:
     <string name="settings_prompt_installer_on_install">Solicitar instalador na instalação</string>
     <string name="settings_prompt_installer_on_install_description">Mostrar janela de seleção de instalador a cada vez que você instalar um app patchado</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Otimização de bateria</string>
+    <string name="settings_system_battery_optimization_description">Impede que o sistema interrompa o patcher quando o Morphe for minimizado.</string>
+    <string name="settings_system_battery_optimization_excluded">Excluído</string>
+    <string name="settings_system_battery_optimization_not_excluded">Não excluído</string>
     <string name="settings_system_performance">Desempenho</string>
     <string name="settings_system_process_runtime">Processos de runtime</string>
     <string name="settings_system_process_runtime_description">Executar o patching em processo separado para maior estabilidade</string>
@@ -650,7 +670,7 @@ As dimensões das imagens devem ser as seguintes:
     <string name="credits_prior_development">Desenvolvimento anterior</string>
     <string name="opensource_licenses">Licenças de código aberto</string>
     <!-- Shared strings -->
-    <string name="patches">Remendos</string>
+    <string name="patches">Patches</string>
     <string name="home">Início</string>
     <string name="settings">Configurações</string>
     <string name="yes">Sim</string>
@@ -680,6 +700,8 @@ As dimensões das imagens devem ser as seguintes:
     <string name="disabled">Desativado</string>
     <string name="selected">Selecionado</string>
     <string name="not_selected">Não selecionado</string>
+    <string name="select_all">Selecionar tudo</string>
+    <string name="deselect_all">Desmarcar tudo</string>
     <string name="rename">Renomear</string>
     <string name="import_">Importar</string>
     <string name="export">Exportar</string>

@@ -58,6 +58,9 @@ class PreferencesManager(
     /** Tracks whether the POST_NOTIFICATIONS runtime permission dialog has already been shown at least once on first launch (Android 13+). */
     val notificationPermissionRequested = booleanPreference("notification_permission_requested", false)
 
+    /** Tracks whether the battery optimization exclusion dialog has been shown at least once. */
+    val batteryOptimizationRequested = booleanPreference("battery_optimization_requested", false)
+
     val useExpertMode = booleanPreference("use_expert_mode", false)
 
     val stripUnusedNativeLibs = booleanPreference("strip_unused_native_libs", false)
@@ -177,7 +180,6 @@ class PreferencesManager(
         val backgroundType: BackgroundType? = null,
         val randomBackgroundInterval: RandomInterval? = null,
         val useExpertMode: Boolean? = null,
-        val backgroundUpdateNotifications: Boolean? = null,
         val updateCheckInterval: UpdateCheckInterval? = null,
         val customBundles: List<BundleSnapshot>? = null,
         val bytecodeModePreference: BytecodeMode? = null,
@@ -212,7 +214,6 @@ class PreferencesManager(
         backgroundType = backgroundType.get(),
         randomBackgroundInterval = randomBackgroundInterval.get(),
         useExpertMode = useExpertMode.get(),
-        backgroundUpdateNotifications = backgroundUpdateNotifications.get(),
         updateCheckInterval = updateCheckInterval.get(),
         bytecodeModePreference = bytecodeModePreference.get(),
     )
@@ -246,7 +247,6 @@ class PreferencesManager(
         snapshot.backgroundType?.let { backgroundType.value = it }
         snapshot.randomBackgroundInterval?.let { randomBackgroundInterval.value = it }
         snapshot.useExpertMode?.let { useExpertMode.value = it }
-        snapshot.backgroundUpdateNotifications?.let { backgroundUpdateNotifications.value = it }
         snapshot.updateCheckInterval?.let { updateCheckInterval.value = it }
         snapshot.bytecodeModePreference?.let { bytecodeModePreference.value = it }
     }

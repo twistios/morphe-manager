@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Ja, help my om \'n APK te vind</string>
     <string name="home_apk_availability_no">Nee, ek het reeds \'n APK</string>
     <string name="home_apk_use_saved_with_version">Gebruik gestoorde APK (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Gebruik geïnstalleerde APK (v%s)</string>
     <string name="home_app_info_no_saved_apk">Geen gestoorde APK nie. Verandering sal vereis dat jy die APK vyl weer kies</string>
     <string name="home_version_requires_android">Vereis Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Nie op hierdie toestel ondersteun nie</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">Kon nie die lêer lees nie. Gaan na of \'Eksterne stoorplek\' nie beperk is vir die battery nie</string>
     <string name="home_invalid_apk_not_an_apk">Die gekose lêer is nie \'n geldige APK nie</string>
     <string name="home_invalid_apk_io_error">Kon die lêer nie oopmaak nie. Probeer weer</string>
+    <string name="home_external_apk_expert_mode_required">Hierdie funksie is slegs beskikbaar in Ekspermodus</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Spesialismodus</string>
     <string name="expert_mode_search">Soek patchings</string>
     <string name="expert_mode_proceed">Gaan voort met pleister</string>
     <string name="expert_mode_disable_all">Deaktiveer alles</string>
+    <string name="expert_mode_disable_all_done">Alle pleisters gedeaktiveer</string>
     <string name="expert_mode_enable_all">Aktiveer alles</string>
+    <string name="expert_mode_enable_all_done">Alle pleisters geaktiveer</string>
     <string name="expert_mode_reset_to_default">Aktiveer aanbevole pleisters</string>
+    <string name="expert_mode_reset_to_default_done">Aanbevole pleisters toegepas</string>
     <string name="expert_mode_restore_saved">Ingevoeg suksesvol</string>
+    <string name="expert_mode_restore_saved_done">Gestoorde keuse herstel</string>
     <string name="expert_mode_no_results">Geen patchings gevind</string>
     <string name="expert_mode_universal_patches">Universele pleisters</string>
     <string name="expert_mode_new_patches">Nuwe</string>
@@ -185,6 +191,7 @@ Vir die beste resultate beveel hierdie app aan om 'n &lt;b&gt;volle APK&lt;/b&gt
     <string name="patch_option_enter_number">Gee getal in</string>
     <string name="patch_option_enter_decimal">Gee desimaal in</string>
     <string name="patch_option_pick_folder">Kies vouer</string>
+    <string name="patch_option_pick_file">Kies lêer</string>
     <string name="patch_option_list_duplicate">Hierdie waarde bestaan ​​reeds</string>
     <string name="patch_option_list_empty">Waarde kan nie leeg wees nie</string>
     <string name="patch_option_list_empty_state">Geen waardes bygevoeg nie</string>
@@ -263,6 +270,11 @@ Vir die beste resultate beveel hierdie app aan om 'n &lt;b&gt;volle APK&lt;/b&gt
     <string name="patcher_unknown_error">Onbekende fout het voorgekom</string>
     <string name="patcher_conflict_title">Pakket konflik</string>
     <string name="patcher_conflict_subtitle">Jy moet die bestaande weergawe deïnstalleer</string>
+    <string name="patcher_conflict_hint">Die aangepaste app gebruik \'n ander sertifikaat as die geïnstalleerde weergawe. Deïnstallering sal alle app-data uitwis.</string>
+    <string name="patcher_installed_conflict_title">Vereeniging vereis</string>
+    <string name="patcher_installed_conflict_body">"Morphe teken gepatchte toepassings met sy eie sertifikaat, wat verskil van die oorspronklike. Android vereis om die bestaande weergawe te verwyder voordat die gepatchte toepassing geïnstalleer kan word.
+
+Deïnstallering sal alle toepassingsdata permanent uitwis."</string>
     <string name="patcher_install_error_title">Installasiefout</string>
     <string name="patcher_install_error_subtitle">Probeer deïnstalleer en weer installeer</string>
     <string name="patcher_ready_to_install_subtitle">Druk op die knoppie hieronder om te installeer</string>
@@ -288,6 +300,10 @@ Vir die beste resultate beveel hierdie app aan om 'n &lt;b&gt;volle APK&lt;/b&gt
     <string name="patcher_step_group_saving">Stoor</string>
     <string name="patcher_step_write_patched">Skryf gepatchte APK lêer</string>
     <string name="patcher_step_sign_apk">Teken gepatchte APK lêer</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Beskerming teen agtergrondpleister</string>
+    <string name="battery_optimization_dialog_description">Sommige toestelle kan die pleister stop wanneer die toepassing geminimaliseer word. Laat Morphe sonder batterybeperkings loop om te verseker dat die pleister betroubaar voltooi word.</string>
+    <string name="battery_optimization_not_now">Nie nou nie</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patching aan die gang…</string>
     <string name="patcher_notification_text">Tik om terug te keer na die patcher</string>
@@ -554,6 +570,10 @@ Die beeld afmetings moet soos volg wees:
     <string name="settings_prompt_installer_on_install">Prompt installer on install</string>
     <string name="settings_prompt_installer_on_install_description">Show installer selection dialog each time you install a patched app</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Battery-optimalisering</string>
+    <string name="settings_system_battery_optimization_description">Verhoed dat die stelsel die pleister stop wanneer Morphe geminimeer is</string>
+    <string name="settings_system_battery_optimization_excluded">Uitgesluit</string>
+    <string name="settings_system_battery_optimization_not_excluded">Nie uitgesluit nie</string>
     <string name="settings_system_performance">Prestasie</string>
     <string name="settings_system_process_runtime">Proses tydloop</string>
     <string name="settings_system_process_runtime_description">Voer patching uit in \'n aparte proses vir beter stabiliteit</string>
@@ -680,6 +700,8 @@ Die beeld afmetings moet soos volg wees:
     <string name="disabled">Gedeaktiveer</string>
     <string name="selected">Gekies</string>
     <string name="not_selected">Nie gekies nie</string>
+    <string name="select_all">Kies alles</string>
+    <string name="deselect_all">Deselekteer alles</string>
     <string name="rename">Hernoem</string>
     <string name="import_">Importeer</string>
     <string name="export">Uitvoer</string>

@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Sea, cabhraigh liom APK a aimsiú</string>
     <string name="home_apk_availability_no">Níl, tá APK agam cheana féin</string>
     <string name="home_apk_use_saved_with_version">Úsáid an APK sábháilte (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Úsáid an APK suiteáilte (v%s)</string>
     <string name="home_app_info_no_saved_apk">Níl aon APK sábháilte. Beidh ort an comhad APK a roghnú arís le haghaidh paisteála.</string>
     <string name="home_version_requires_android">Éilíonn Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Ní thacaítear leis ar an ngléas seo</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">Níorbh fhéidir an comhad a léamh. Seiceáil nach bhfuil srian ceallraí ar \'Stóráil Sheachtrach\'</string>
     <string name="home_invalid_apk_not_an_apk">Ní APK bailí an comhad roghnaithe</string>
     <string name="home_invalid_apk_io_error">Theip ar an gcomhad a oscailt. Déan iarracht arís.</string>
+    <string name="home_external_apk_expert_mode_required">Níl an gné seo ar fáil ach i mód Saineolaithe</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Mód saineolaithe</string>
     <string name="expert_mode_search">Paistí cuardaigh</string>
     <string name="expert_mode_proceed">Lean ar aghaidh leis an bpaisteáil</string>
     <string name="expert_mode_disable_all">Díchumasaigh gach rud</string>
+    <string name="expert_mode_disable_all_done">Paistí uilíocha díchumasaithe</string>
     <string name="expert_mode_enable_all">Cumasaigh gach rud</string>
+    <string name="expert_mode_enable_all_done">Paistí uilíocha cumasaithe</string>
     <string name="expert_mode_reset_to_default">Cumasaigh paistí molta</string>
+    <string name="expert_mode_reset_to_default_done">Paistí molta curtha i bhfeidhm</string>
     <string name="expert_mode_restore_saved">Athchóirigh an rogha sábháilte</string>
+    <string name="expert_mode_restore_saved_done">Athbhunaigh an rogha sábháilte</string>
     <string name="expert_mode_no_results">Níor aimsíodh aon phaistí</string>
     <string name="expert_mode_universal_patches">Paistí uilíocha</string>
     <string name="expert_mode_new_patches">Nua</string>
@@ -185,6 +191,7 @@ Chun na torthaí is fearr a fháil, molann an aip seo paiste a chur ar &lt;b&gt;
     <string name="patch_option_enter_number">Cuir isteach uimhir</string>
     <string name="patch_option_enter_decimal">Cuir isteach deachúil</string>
     <string name="patch_option_pick_folder">Roghnaigh fillteán</string>
+    <string name="patch_option_pick_file">Roghnaigh comhad</string>
     <string name="patch_option_list_duplicate">Tá an luach seo ann cheana féin</string>
     <string name="patch_option_list_empty">Ní féidir luach a fhágáil folamh</string>
     <string name="patch_option_list_empty_state">Níl aon luachanna curtha leis fós</string>
@@ -263,6 +270,11 @@ Chun na torthaí is fearr a fháil, molann an aip seo paiste a chur ar &lt;b&gt;
     <string name="patcher_unknown_error">Tharla earráid anaithnid</string>
     <string name="patcher_conflict_title">Coinbhleacht pacáiste</string>
     <string name="patcher_conflict_subtitle">Ní mór duit an leagan reatha a dhíshuiteáil</string>
+    <string name="patcher_conflict_hint">Úsáideann an aip phaisteáilte deimhniú difriúil ón leagan suiteáilte. Scriosfaidh díshuiteáil gach sonraí aip</string>
+    <string name="patcher_installed_conflict_title">Díshuiteáil riachtanach</string>
+    <string name="patcher_installed_conflict_body">"Síníonn Morphe aipeanna paisteáilte lena theastas féin, atá difriúil ón mbunleagan. Éilíonn Android an leagan atá ann cheana a bhaint sula bhféadfar an aip phaisteáilte a shuiteáil.
+
+Scriosfaidh díshuiteáil gach sonraí aip go buan."</string>
     <string name="patcher_install_error_title">Earráid suiteála</string>
     <string name="patcher_install_error_subtitle">Déan iarracht é a dhíshuiteáil agus a shuiteáil arís</string>
     <string name="patcher_ready_to_install_subtitle">Brúigh an cnaipe thíos chun é a shuiteáil</string>
@@ -288,6 +300,10 @@ Chun na torthaí is fearr a fháil, molann an aip seo paiste a chur ar &lt;b&gt;
     <string name="patcher_step_group_saving">Sábháil</string>
     <string name="patcher_step_write_patched">Ag scríobh comhaid APK paistithe</string>
     <string name="patcher_step_sign_apk">Comhad APK paisteáilte á shíniú</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Cosaint athnuachana i gcúlra</string>
+    <string name="battery_optimization_dialog_description">D’fhéadfadh le dhéantús roinnt gléasanna stop a chur le hathnuaíocht nuair a bhíonn an app laghdaithe. Ligeann do Morphe rith gan srian ar an ceallraí chun a chinntiú go gcríochnófar an athnuachan go hiontaofa</string>
+    <string name="battery_optimization_not_now">Níl anois</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Paisteáil ar siúl…</string>
     <string name="patcher_notification_text">Tapáil chun filleadh ar an paisteálaí</string>
@@ -552,6 +568,10 @@ Ní mór toisí na híomhá a bheith mar seo a leanas:
     <string name="settings_prompt_installer_on_install">Suiteálaí spreagtha le linn suiteála</string>
     <string name="settings_prompt_installer_on_install_description">Taispeáin dialóg roghnúcháin suiteálaí gach uair a shuiteálann tú aip phaisteáilte</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Uasmhéadú ceallraí</string>
+    <string name="settings_system_battery_optimization_description">Cuireann sé cosc ​​ar an gcóras an patcher a stopadh nuair a bhíonn Morphe beagaithe</string>
+    <string name="settings_system_battery_optimization_excluded">Eisceachta</string>
+    <string name="settings_system_battery_optimization_not_excluded">Ní eisceachta</string>
     <string name="settings_system_performance">Feidhmíocht</string>
     <string name="settings_system_process_runtime">Am rith an phróisis</string>
     <string name="settings_system_process_runtime_description">Rith paisteáil i bpróiseas ar leithligh le haghaidh cobhsaíochta níos fearr</string>
@@ -678,6 +698,8 @@ Ní mór toisí na híomhá a bheith mar seo a leanas:
     <string name="disabled">Díchumasaithe</string>
     <string name="selected">Roghnaithe</string>
     <string name="not_selected">Níor roghnaíodh</string>
+    <string name="select_all">Roghnaigh gach ceann</string>
+    <string name="deselect_all">Dícheallú ar fad</string>
     <string name="rename">Athainmnigh</string>
     <string name="import_">Iompórtáil</string>
     <string name="export">Easpórtáil</string>

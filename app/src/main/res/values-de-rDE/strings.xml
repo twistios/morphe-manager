@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Ja, hilf mir eine APK zu finden</string>
     <string name="home_apk_availability_no">Nein, ich habe bereits eine APK</string>
     <string name="home_apk_use_saved_with_version">Verwende die gespeicherte APK (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Verwende die installierte APK (v%s)</string>
     <string name="home_app_info_no_saved_apk">Keine gespeicherte APK. Das Patchen erfordert die erneute Auswahl der APK-Datei</string>
     <string name="home_version_requires_android">Benötigt Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Wird auf diesem Gerät nicht unterstützt</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">Die Datei konnte nicht gelesen werden. Bitte überprüfen Sie, ob \'Externer Speicher\' nicht durch die Batterie eingeschränkt ist</string>
     <string name="home_invalid_apk_not_an_apk">Die ausgewählte Datei ist keine gültige APK</string>
     <string name="home_invalid_apk_io_error">Die Datei konnte nicht geöffnet werden. Bitte versuchen Sie es erneut</string>
+    <string name="home_external_apk_expert_mode_required">Diese Funktion ist nur im Expertenmodus verfügbar</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Experten-Modus</string>
     <string name="expert_mode_search">Suche nach Patches</string>
     <string name="expert_mode_proceed">Fortfahren zum Patchen</string>
     <string name="expert_mode_disable_all">Deaktiviere alle</string>
+    <string name="expert_mode_disable_all_done">Alle Patches deaktiviert</string>
     <string name="expert_mode_enable_all">Aktiviere alle</string>
+    <string name="expert_mode_enable_all_done">Alle Patches aktiviert</string>
     <string name="expert_mode_reset_to_default">Empfohlene Patches aktivieren</string>
+    <string name="expert_mode_reset_to_default_done">Empfohlene Patches angewendet</string>
     <string name="expert_mode_restore_saved">Gespeicherte Auswahl wiederherstellen</string>
+    <string name="expert_mode_restore_saved_done">Wiederhergestellte Auswahl gespeichert</string>
     <string name="expert_mode_no_results">Keine Patches gefunden</string>
     <string name="expert_mode_universal_patches">Universelle Patches</string>
     <string name="expert_mode_new_patches">Neu</string>
@@ -185,6 +191,7 @@ Für optimale Ergebnisse empfiehlt diese App eine &lt;b&gt;vollständige APK&lt;
     <string name="patch_option_enter_number">Zahl eingeben</string>
     <string name="patch_option_enter_decimal">Dezimalzahl eingeben</string>
     <string name="patch_option_pick_folder">Ordner auswählen</string>
+    <string name="patch_option_pick_file">Datei auswählen</string>
     <string name="patch_option_list_duplicate">Dieser Wert existiert bereits</string>
     <string name="patch_option_list_empty">Wert darf nicht leer sein</string>
     <string name="patch_option_list_empty_state">Noch keine Werte hinzugefügt</string>
@@ -263,6 +270,11 @@ Für optimale Ergebnisse empfiehlt diese App eine &lt;b&gt;vollständige APK&lt;
     <string name="patcher_unknown_error">Ein unbekannter Fehler ist aufgetreten</string>
     <string name="patcher_conflict_title">Paketkonflikt</string>
     <string name="patcher_conflict_subtitle">Du musst die vorhandene Version deinstallieren</string>
+    <string name="patcher_conflict_hint">Die gepatchte App verwendet ein anderes Zertifikat als die installierte Version. Die Deinstallation löscht alle App-Daten.</string>
+    <string name="patcher_installed_conflict_title">Deinstallation erforderlich</string>
+    <string name="patcher_installed_conflict_body">"Morphe signiert gepatchte Apps mit seinem eigenen Zertifikat, das sich vom Original unterscheidet. Android erfordert, dass die vorhandene Version entfernt wird, bevor die gepatchte App installiert werden kann.
+
+Durch die Deinstallation werden alle App-Daten dauerhaft gelöscht."</string>
     <string name="patcher_install_error_title">Installationsfehler</string>
     <string name="patcher_install_error_subtitle">Versuchen Sie die App zu deinstallieren und erneut zu installieren</string>
     <string name="patcher_ready_to_install_subtitle">Drücken Sie die Schaltfläche unten zum Installieren</string>
@@ -288,6 +300,10 @@ Für optimale Ergebnisse empfiehlt diese App eine &lt;b&gt;vollständige APK&lt;
     <string name="patcher_step_group_saving">Wird gespeichert</string>
     <string name="patcher_step_write_patched">Gepatchte APK-Datei wird geschrieben</string>
     <string name="patcher_step_sign_apk">Gepatchte APK-Datei wird signiert</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Schutz vor Hintergrund-Patching</string>
+    <string name="battery_optimization_dialog_description">Auf einigen Geräten wird das Patchen beendet, wenn die App minimiert wird. Erlaube Morphe, ohne Batteriebeschränkungen zu laufen, um sicherzustellen, dass das Patchen zuverlässig abgeschlossen wird.</string>
+    <string name="battery_optimization_not_now">Nicht jetzt</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patchen läuft…</string>
     <string name="patcher_notification_text">Zum Patcher zurückkehren</string>
@@ -554,6 +570,10 @@ Die Bildgrößen müssen wie folgt sein:
     <string name="settings_prompt_installer_on_install">Installer bei der Installation auswählen</string>
     <string name="settings_prompt_installer_on_install_description">Zeigt jedes Mal den Auswahldialog für das Installationsprogramm an, wenn Sie eine gepatchte App installieren</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Batterieoptimierung</string>
+    <string name="settings_system_battery_optimization_description">Verhindert, dass das System den Patcher stoppt, wenn Morphe minimiert wird</string>
+    <string name="settings_system_battery_optimization_excluded">Ausgeschlossen</string>
+    <string name="settings_system_battery_optimization_not_excluded">Nicht ausgeschlossen</string>
     <string name="settings_system_performance">Leistung</string>
     <string name="settings_system_process_runtime">Prozesslaufzeit</string>
     <string name="settings_system_process_runtime_description">Das Patchen in einem separaten Prozess für bessere Stabilität ausführen</string>
@@ -680,6 +700,8 @@ Die Bildgrößen müssen wie folgt sein:
     <string name="disabled">Deaktiviert</string>
     <string name="selected">Ausgewählt</string>
     <string name="not_selected">Nicht ausgewählt</string>
+    <string name="select_all">Alles auswählen</string>
+    <string name="deselect_all">Alles abwählen</string>
     <string name="rename">Umbenennen</string>
     <string name="import_">Importieren</string>
     <string name="export">Exportieren</string>

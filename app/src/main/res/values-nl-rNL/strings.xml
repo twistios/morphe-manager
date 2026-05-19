@@ -103,6 +103,7 @@
     <string name="home_apk_availability_yes">Ja, help me een APK te vinden</string>
     <string name="home_apk_availability_no">Nee, ik heb al een .APK</string>
     <string name="home_apk_use_saved_with_version">Gebruik opgeslagen .APK-bestand (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Gebruik geïnstalleerde APK (v%s)</string>
     <string name="home_app_info_no_saved_apk">Er is geen APK opgeslagen. Om de patch uit te voeren, moet u het APK opnieuw selecteren</string>
     <string name="home_version_requires_android">Vereist Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Niet ondersteund voor dit apparaat</string>
@@ -128,14 +129,19 @@
     <string name="home_invalid_apk_unreadable">Kon het bestand niet lezen. Controleer of \'Opslag\' niet beperkt is qua batterijgebruik</string>
     <string name="home_invalid_apk_not_an_apk">Het geselecteerde bestand is geen geldig APK-bestand</string>
     <string name="home_invalid_apk_io_error">Het bestand kon niet worden geopend. Probeer het opnieuw</string>
+    <string name="home_external_apk_expert_mode_required">Deze functie is alleen beschikbaar in de Expert-modus</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Expert-modus</string>
     <string name="expert_mode_search">Zoek patches</string>
     <string name="expert_mode_proceed">Doorgaan met patchen</string>
     <string name="expert_mode_disable_all">Alles uitschakelen</string>
+    <string name="expert_mode_disable_all_done">Alle patches uitgeschakeld</string>
     <string name="expert_mode_enable_all">Alles inschakelen</string>
+    <string name="expert_mode_enable_all_done">Alle patches ingeschakeld</string>
     <string name="expert_mode_reset_to_default">Aanbevolen patches inschakelen</string>
+    <string name="expert_mode_reset_to_default_done">Aanbevolen patches toegepast</string>
     <string name="expert_mode_restore_saved">Selectie opslaan herstellen</string>
+    <string name="expert_mode_restore_saved_done">Herstelde selectie is teruggezet</string>
     <string name="expert_mode_no_results">Geen patches gevonden</string>
     <string name="expert_mode_universal_patches">Universele patches</string>
     <string name="expert_mode_new_patches">Nieuw</string>
@@ -182,6 +188,7 @@ Voor de beste resultaten beveelt deze app aan om een &lt;b&gt;volledig APK&lt;/b
     <string name="patch_option_enter_number">Getal invoeren</string>
     <string name="patch_option_enter_decimal">Decimaal invoeren</string>
     <string name="patch_option_pick_folder">Map selecteren</string>
+    <string name="patch_option_pick_file">Bestand selecteren</string>
     <string name="patch_option_list_duplicate">Deze waarde bestaat al</string>
     <string name="patch_option_list_empty">Waarde mag niet leeg zijn</string>
     <string name="patch_option_list_empty_state">Nog geen waarden toegevoegd</string>
@@ -260,6 +267,11 @@ Voor de beste resultaten beveelt deze app aan om een &lt;b&gt;volledig APK&lt;/b
     <string name="patcher_unknown_error">Onbekende fout opgetreden</string>
     <string name="patcher_conflict_title">Pakketconflict</string>
     <string name="patcher_conflict_subtitle">Je moet de bestaande versie verwijderen</string>
+    <string name="patcher_conflict_hint">De aangepaste app gebruikt een ander certificaat dan de geïnstalleerde versie. Door het verwijderen worden alle app-gegevens gewist.</string>
+    <string name="patcher_installed_conflict_title">Vereiste deïnstallatie</string>
+    <string name="patcher_installed_conflict_body">"Morphe ondertekent gepatchte apps met zijn eigen certificaat, dat verschilt van het origineel. Android vereist dat de bestaande versie wordt verwijderd voordat de gepatchte app kan worden geïnstalleerd.
+
+Deïnstalleren wist alle app-gegevens permanent."</string>
     <string name="patcher_install_error_title">Installatiefout</string>
     <string name="patcher_install_error_subtitle">Probeer opnieuw te verwijderen en te installeren</string>
     <string name="patcher_ready_to_install_subtitle">Druk op de onderstaande knop om te installeren</string>
@@ -285,6 +297,10 @@ Voor de beste resultaten beveelt deze app aan om een &lt;b&gt;volledig APK&lt;/b
     <string name="patcher_step_group_saving">Opslaan</string>
     <string name="patcher_step_write_patched">Gepatcht APK-bestand schrijven</string>
     <string name="patcher_step_sign_apk">Gepatcht APK-bestand ondertekenen</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Bescherming tegen achtergrond patching</string>
+    <string name="battery_optimization_dialog_description">Sommige apparaten kunnen de patcher stoppen wanneer de app geminimaliseerd is. Sta Morphe toe om zonder batterijbeperkingen te draaien om ervoor te zorgen dat het patchen betrouwbaar voltooid wordt.</string>
+    <string name="battery_optimization_not_now">Niet nu</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patchen bezig…</string>
     <string name="patcher_notification_text">Tik om terug te keren naar de patcher</string>
@@ -551,6 +567,10 @@ De afbeelddimensionen moeten als volgt zijn:
     <string name="settings_prompt_installer_on_install">Installatieprogramma prompt bij installatie</string>
     <string name="settings_prompt_installer_on_install_description">Toon installatieprogramma- selectiedialoog bij elk installeren van een gepatchte app</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Batterijoptimalisatie</string>
+    <string name="settings_system_battery_optimization_description">Voorkomt dat het systeem de patcher stopt wanneer Morphe geminimaliseerd is</string>
+    <string name="settings_system_battery_optimization_excluded">Uitgesloten</string>
+    <string name="settings_system_battery_optimization_not_excluded">Niet uitgesloten</string>
     <string name="settings_system_performance">Prestaties</string>
     <string name="settings_system_process_runtime">Processruntime</string>
     <string name="settings_system_process_runtime_description">Voer patching uit in een apart proces voor betere stabiliteit</string>
@@ -677,6 +697,8 @@ De afbeelddimensionen moeten als volgt zijn:
     <string name="disabled">Uitgeschakeld</string>
     <string name="selected">Geselecteerd</string>
     <string name="not_selected">Niet geselecteerd</string>
+    <string name="select_all">Alles selecteren</string>
+    <string name="deselect_all">Alles deselecteren</string>
     <string name="rename">Hernoemen</string>
     <string name="import_">Importeren</string>
     <string name="export">Exporteren</string>

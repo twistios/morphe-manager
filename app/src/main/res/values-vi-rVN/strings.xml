@@ -26,7 +26,7 @@
     <string name="home_updating_sources">Đang cập nhật nguồn…</string>
     <string name="home_update_progress_format">Đã xử lý %s</string>
     <string name="home_update_success">Cập nhật nguồn hoàn tất</string>
-    <string name="home_update_success_subtitle">Đã cập nhật tất cả các nguồn lên mới nhất</string>
+    <string name="home_update_success_subtitle">Đã cập nhật tất cả nguồn lên mới nhất</string>
     <string name="home_sources_are_loading">Đang tải nguồn, vui lòng chờ…</string>
     <string name="home_search_apps">Tìm ứng dụng</string>
     <string name="home_no_apps_title">Không có ứng dụng nào có sẵn</string>
@@ -65,7 +65,7 @@
     <string name="sources_management_already_exists">Nguồn này đã được thêm vào rồi</string>
     <string name="sources_management_invalid_url">URL nguồn không hợp lệ. Vui lòng kiểm tra địa chỉ và thử lại</string>
     <string name="sources_management_metadata_unavailable">Không có metadata</string>
-    <string name="sources_management_metadata_unavailable_hint">Không thể truy cập file metadata từ máy chủ. Bạn vẫn có thể vá bằng gói ứng dụng đã cài, nhưng tính năng tự động cập nhật sẽ bị tắt cho nguồn này</string>
+    <string name="sources_management_metadata_unavailable_hint">Không thể truy cập tệp metadata từ máy chủ. Bạn vẫn có thể vá bằng gói ứng dụng đã cài, nhưng tính năng tự động cập nhật sẽ bị tắt cho nguồn này</string>
     <string name="sources_management_metadata_unavailable_hint_missing">Không thể tải gói vá. URL nguồn có thể không đúng hoặc file không tồn tại</string>
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Tên hiển thị</string>
@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Có, giúp tôi vs</string>
     <string name="home_apk_availability_no">Không, tôi có APK rồi</string>
     <string name="home_apk_use_saved_with_version">Dùng APK đã lưu (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Dùng APK đã cài (v%s)</string>
     <string name="home_app_info_no_saved_apk">Chưa lưu APK nào. Bạn sẽ phải chọn lại APK khi vá</string>
     <string name="home_version_requires_android">Yêu cầu Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Không hỗ trợ trên thiết bị này</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">Không thể đọc tệp. Hãy kiểm tra xem \"Bộ nhớ ngoài\" có bị hạn chế pin hay không</string>
     <string name="home_invalid_apk_not_an_apk">Tệp đã chọn không phải là tệp APK hợp lệ</string>
     <string name="home_invalid_apk_io_error">Không thể mở tệp. Vui lòng thử lại</string>
+    <string name="home_external_apk_expert_mode_required">Tính năng này chỉ có ở chế độ Chuyên gia</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Chế độ chuyên gia</string>
     <string name="expert_mode_search">Tìm kiếm</string>
     <string name="expert_mode_proceed">Tiến hành vá</string>
     <string name="expert_mode_disable_all">Tắt tất cả</string>
+    <string name="expert_mode_disable_all_done">Đã tắt tất cả bản vá</string>
     <string name="expert_mode_enable_all">Bật tất cả</string>
+    <string name="expert_mode_enable_all_done">Đã bật tất cả bản vá</string>
     <string name="expert_mode_reset_to_default">Bật các bản vá đề xuất</string>
+    <string name="expert_mode_reset_to_default_done">Đã áp dụng các bản vá đề xuất</string>
     <string name="expert_mode_restore_saved">Khôi phục lựa chọn đã lưu</string>
+    <string name="expert_mode_restore_saved_done">Đã khôi phục bản vá đã chọn được lưu</string>
     <string name="expert_mode_no_results">Không tìm thấy bản vá nào</string>
     <string name="expert_mode_universal_patches">Bản vá phổ quát</string>
     <string name="expert_mode_new_patches">Mới</string>
@@ -185,6 +191,7 @@ Tốt nhất bạn nên chuyển sang &lt;b&gt;APK đầy đủ&lt;/b&gt; để 
     <string name="patch_option_enter_number">Nhập số</string>
     <string name="patch_option_enter_decimal">Nhập số thập phân</string>
     <string name="patch_option_pick_folder">Chọn thư mục</string>
+    <string name="patch_option_pick_file">Chọn tệp</string>
     <string name="patch_option_list_duplicate">Giá trị này đã tồn tại rồi</string>
     <string name="patch_option_list_empty">Không được để trống</string>
     <string name="patch_option_list_empty_state">Chưa thêm giá trị nào</string>
@@ -263,6 +270,11 @@ Tốt nhất bạn nên chuyển sang &lt;b&gt;APK đầy đủ&lt;/b&gt; để 
     <string name="patcher_unknown_error">Đã xảy ra lỗi không xác định</string>
     <string name="patcher_conflict_title">Phát hiện xung đột</string>
     <string name="patcher_conflict_subtitle">Bạn cần gỡ cài đặt phiên bản hiện có</string>
+    <string name="patcher_conflict_hint">Ứng dụng đã vá dùng chứng chỉ khác với phiên bản đã cài đặt. Gỡ cài đặt sẽ xóa tất cả dữ liệu ứng dụng</string>
+    <string name="patcher_installed_conflict_title">Cần phải gỡ cài đặt</string>
+    <string name="patcher_installed_conflict_body">"Morphe ký các ứng dụng đã vá bằng chứng chỉ của riêng mình, khác với bản gốc. Android yêu cầu xóa phiên bản hiện tại trước khi có thể cài đặt ứng dụng đã vá.
+
+Gỡ cài đặt sẽ xóa vĩnh viễn toàn bộ dữ liệu ứng dụng"</string>
     <string name="patcher_install_error_title">Lỗi rồiii</string>
     <string name="patcher_install_error_subtitle">Hãy thử gỡ và cài đặt lại</string>
     <string name="patcher_ready_to_install_subtitle">Bấm nút bên dưới để cài đặt</string>
@@ -288,6 +300,10 @@ Tốt nhất bạn nên chuyển sang &lt;b&gt;APK đầy đủ&lt;/b&gt; để 
     <string name="patcher_step_group_saving">Đang lưu</string>
     <string name="patcher_step_write_patched">Đang viết APK đã vá</string>
     <string name="patcher_step_sign_apk">Đang ký APK đã vá</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Bảo vệ khi vá nền</string>
+    <string name="battery_optimization_dialog_description">Một số thiết bị có thể tắt trình vá khi ứng dụng bị thu nhỏ. Cho phép Morphe chạy không giới hạn pin để quá trình vá hoàn thành ổn định</string>
+    <string name="battery_optimization_not_now">Từ từ</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Đang vá…</string>
     <string name="patcher_notification_text">Bấm để quay trở lại trình vá</string>
@@ -555,6 +571,10 @@ Kích thước hình ảnh yêu cầu:
     <string name="settings_prompt_installer_on_install">Hỏi trình cài đặt khi cài</string>
     <string name="settings_prompt_installer_on_install_description">Luôn hiện hộp thoại chọn trình cài đặt khi cài ứng dụng đã vá</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Tối ưu hóa pin</string>
+    <string name="settings_system_battery_optimization_description">Ngăn hệ thống dừng trình vá khi Morphe bị thu nhỏ</string>
+    <string name="settings_system_battery_optimization_excluded">Đã tối ưu</string>
+    <string name="settings_system_battery_optimization_not_excluded">Chưa tối ưu</string>
     <string name="settings_system_performance">Hiệu suất</string>
     <string name="settings_system_process_runtime">Tiến trình riêng</string>
     <string name="settings_system_process_runtime_description">Chạy quá trình vá trong tiến trình riêng biệt để cải thiện độ ổn định</string>
@@ -681,6 +701,8 @@ Kích thước hình ảnh yêu cầu:
     <string name="disabled">Đang tắt</string>
     <string name="selected">Đã chọn</string>
     <string name="not_selected">Không chọn</string>
+    <string name="select_all">Chọn tất cả</string>
+    <string name="deselect_all">Bỏ chọn tất cả</string>
     <string name="rename">Đổi tên</string>
     <string name="import_">Nhập</string>
     <string name="export">Xuất</string>

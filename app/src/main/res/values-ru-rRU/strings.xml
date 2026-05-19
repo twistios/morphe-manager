@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Да, помогите мне найти APK</string>
     <string name="home_apk_availability_no">Нет, у меня уже есть APK</string>
     <string name="home_apk_use_saved_with_version">Сохраненный APK (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Установленный APK (v%s)</string>
     <string name="home_app_info_no_saved_apk">Нет сохраненного APK. Для патча нужно будет снова выбрать APK файл</string>
     <string name="home_version_requires_android">Требуется Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Не поддерживается на этом устройстве</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">Не удалось прочитать файл. Убедитесь, что \'Внешнее хранилище\' не ограничено по энергопотреблению</string>
     <string name="home_invalid_apk_not_an_apk">Выбранный файл не является допустимым APK</string>
     <string name="home_invalid_apk_io_error">Не удалось открыть файл. Пожалуйста, попробуйте еще раз</string>
+    <string name="home_external_apk_expert_mode_required">Эта функция доступна только в режиме эксперта</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Режим эксперта</string>
     <string name="expert_mode_search">Поиск патчей</string>
     <string name="expert_mode_proceed">Перейти к патчингу</string>
     <string name="expert_mode_disable_all">Отключить все</string>
+    <string name="expert_mode_disable_all_done">Все патчи отключены</string>
     <string name="expert_mode_enable_all">Включить все</string>
+    <string name="expert_mode_enable_all_done">Все патчи включены</string>
     <string name="expert_mode_reset_to_default">Включить рекомендованные патчи</string>
+    <string name="expert_mode_reset_to_default_done">Рекомендуемые патчи применены</string>
     <string name="expert_mode_restore_saved">Восстановить сохраненный выбор</string>
+    <string name="expert_mode_restore_saved_done">Восстановленный сохраненный выбор</string>
     <string name="expert_mode_no_results">Патчи не найдены</string>
     <string name="expert_mode_universal_patches">Универсальные патчи</string>
     <string name="expert_mode_new_patches">Новые</string>
@@ -185,6 +191,7 @@
     <string name="patch_option_enter_number">Введите число</string>
     <string name="patch_option_enter_decimal">Введите десятичную дробь</string>
     <string name="patch_option_pick_folder">Выбрать папку</string>
+    <string name="patch_option_pick_file">Выберите файл</string>
     <string name="patch_option_list_duplicate">Это значение уже существует</string>
     <string name="patch_option_list_empty">Значение не может быть пустым</string>
     <string name="patch_option_list_empty_state">Значения еще не добавлены</string>
@@ -263,6 +270,11 @@
     <string name="patcher_unknown_error">Произошла неизвестная ошибка</string>
     <string name="patcher_conflict_title">Конфликт пакетов</string>
     <string name="patcher_conflict_subtitle">Вам необходимо удалить существующую версию</string>
+    <string name="patcher_conflict_hint">Исправленный файл приложения использует другой сертификат, чем установленная версия. Удаление приведет к удалению всех данных приложения</string>
+    <string name="patcher_installed_conflict_title">Требуется удаление</string>
+    <string name="patcher_installed_conflict_body">"Morphe подписывает пропатченные приложения своим собственным сертификатом, который отличается от оригинального. Android требует удаления существующей версии перед установкой пропатченного приложения.
+
+Удаление приведет к безвозвратному удалению всех данных приложения"</string>
     <string name="patcher_install_error_title">Ошибка установки</string>
     <string name="patcher_install_error_subtitle">Попробуйте удалить и установить заново</string>
     <string name="patcher_ready_to_install_subtitle">Нажмите кнопку ниже, чтобы установить</string>
@@ -288,6 +300,10 @@
     <string name="patcher_step_group_saving">Сохранение</string>
     <string name="patcher_step_write_patched">Запись патченного APK файла</string>
     <string name="patcher_step_sign_apk">Подпись пропатченного APK-файла</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Защита от патчей в фоновом режиме</string>
+    <string name="battery_optimization_dialog_description">На некоторых устройствах патчер может быть остановлен, когда приложение свернуто. Разрешите Morphe работать без ограничений заряда батареи, чтобы гарантировать надежное завершение патчинга.</string>
+    <string name="battery_optimization_not_now">Не сейчас</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Идет установка исправлений…</string>
     <string name="patcher_notification_text">Нажмите, чтобы вернуться к патчеру</string>
@@ -554,6 +570,10 @@ morphe_header_custom_dark.png
     <string name="settings_prompt_installer_on_install">Предложить установщик при установке</string>
     <string name="settings_prompt_installer_on_install_description">Показывать диалоговое окно выбора установщика каждый раз, когда вы устанавливаете патченное приложение</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Оптимизация батареи</string>
+    <string name="settings_system_battery_optimization_description">Предотвращает остановку системы патчера при сворачивании Morphe</string>
+    <string name="settings_system_battery_optimization_excluded">Исключено</string>
+    <string name="settings_system_battery_optimization_not_excluded">Не исключено</string>
     <string name="settings_system_performance">Производительность</string>
     <string name="settings_system_process_runtime">Время выполнения процесса</string>
     <string name="settings_system_process_runtime_description">Выполнять патчинг в отдельном процессе для лучшей стабильности</string>
@@ -680,6 +700,8 @@ morphe_header_custom_dark.png
     <string name="disabled">Выключено</string>
     <string name="selected">Выбрано</string>
     <string name="not_selected">Не выбрано</string>
+    <string name="select_all">Выбрать все</string>
+    <string name="deselect_all">Снять выделение со всех</string>
     <string name="rename">Переименовать</string>
     <string name="import_">Импортировать</string>
     <string name="export">Экспорт</string>

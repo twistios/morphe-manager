@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Ano, pomozte mi najít APK</string>
     <string name="home_apk_availability_no">Ne, už mám APK</string>
     <string name="home_apk_use_saved_with_version">Použít uložené APK (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Použijte nainstalovaný APK (v%s)</string>
     <string name="home_app_info_no_saved_apk">Není uložené žádné APK. Pro záplatování bude potřeba vybrat soubor APK znovu</string>
     <string name="home_version_requires_android">Vyžaduje Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Není podporováno na tomto zařízení</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">Nepodařilo se přečíst soubor. Zkontrolujte, zda \'Externí úložiště\' není omezeno z důvodu úspory baterie</string>
     <string name="home_invalid_apk_not_an_apk">Vybraný soubor není platný APK</string>
     <string name="home_invalid_apk_io_error">Nepodařilo se otevřít soubor. Zkuste to znovu</string>
+    <string name="home_external_apk_expert_mode_required">Tato funkce je dostupná pouze v expertním režimu</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Expertní režim</string>
     <string name="expert_mode_search">Vyhledat záplaty</string>
     <string name="expert_mode_proceed">Pokračovat v záplatování</string>
     <string name="expert_mode_disable_all">Vypnout vše</string>
+    <string name="expert_mode_disable_all_done">Všechny záplaty vypnuté</string>
     <string name="expert_mode_enable_all">Zapnout vše</string>
+    <string name="expert_mode_enable_all_done">Všechny záplaty zapnuté</string>
     <string name="expert_mode_reset_to_default">Povolit doporučené záplaty</string>
+    <string name="expert_mode_reset_to_default_done">Doporučené záplaty aplikovány</string>
     <string name="expert_mode_restore_saved">Obnovit uloženou hodnotu</string>
+    <string name="expert_mode_restore_saved_done">Obnovená uložená volba</string>
     <string name="expert_mode_no_results">Nebyly nalezeny žádné záplaty</string>
     <string name="expert_mode_universal_patches">Univerzální záplaty</string>
     <string name="expert_mode_new_patches">Nový</string>
@@ -185,6 +191,7 @@ Pro nejlepší výsledky doporučujeme záplatovat &lt;b&gt;úplný APK&lt;/b&gt
     <string name="patch_option_enter_number">Zadejte číslo</string>
     <string name="patch_option_enter_decimal">Zadejte desetinné číslo</string>
     <string name="patch_option_pick_folder">Vybrat složku</string>
+    <string name="patch_option_pick_file">Vyberte soubor</string>
     <string name="patch_option_list_duplicate">Tato hodnota již existuje</string>
     <string name="patch_option_list_empty">Hodnota nesmí být prázdná</string>
     <string name="patch_option_list_empty_state">Ještě jste nepřidali žádné hodnoty</string>
@@ -263,6 +270,11 @@ Pro nejlepší výsledky doporučujeme záplatovat &lt;b&gt;úplný APK&lt;/b&gt
     <string name="patcher_unknown_error">Došlo k neznámé chybě</string>
     <string name="patcher_conflict_title">Konflikt balíčku</string>
     <string name="patcher_conflict_subtitle">Musíte odinstalovat stávající verzi</string>
+    <string name="patcher_conflict_hint">Opravená aplikace používá jiný certifikát než nainstalovaná verze. Odinstalování smaže všechna data aplikace.</string>
+    <string name="patcher_installed_conflict_title">Odinstalace je vyžadována</string>
+    <string name="patcher_installed_conflict_body">"Morphe podepisuje opravené aplikace vlastním certifikátem, který se liší od původního. Android vyžaduje odstranění stávající verze před instalací opravené aplikace.
+
+Odinstalace trvale smaže všechna data aplikace"</string>
     <string name="patcher_install_error_title">Chyba instalace</string>
     <string name="patcher_install_error_subtitle">Zkuste odinstalovat a nainstalovat znovu</string>
     <string name="patcher_ready_to_install_subtitle">Stiskněte tlačítko níže pro instalaci</string>
@@ -288,6 +300,10 @@ Pro nejlepší výsledky doporučujeme záplatovat &lt;b&gt;úplný APK&lt;/b&gt
     <string name="patcher_step_group_saving">Ukládání</string>
     <string name="patcher_step_write_patched">Zápis opraveného APK souboru</string>
     <string name="patcher_step_sign_apk">Podpis opraveného APK souboru</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Ochrana záplat na pozadí</string>
+    <string name="battery_optimization_dialog_description">Na některých zařízeních se může záplata zastavit, když je aplikace minimalizována. Povolte aplikaci Morphe, aby běžela bez omezení spotřeby energie, a zajistěte tak spolehlivé dokončení záplatování.</string>
+    <string name="battery_optimization_not_now">Ne teď</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patchování probíhá…</string>
     <string name="patcher_notification_text">Klepněte pro návrat k patcheru</string>
@@ -554,6 +570,10 @@ Rozměry obrázků musí být následující:
     <string name="settings_prompt_installer_on_install">Zobrazit dialog výběru instalátoru při instalaci</string>
     <string name="settings_prompt_installer_on_install_description">Zobrazit dialog výběru instalátoru při každé instalaci upravené aplikace</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Optimalizace baterie</string>
+    <string name="settings_system_battery_optimization_description">Zabraňuje systému zastavení patcheru, když je Morphe minimalizováno</string>
+    <string name="settings_system_battery_optimization_excluded">Vyloučeno</string>
+    <string name="settings_system_battery_optimization_not_excluded">Není vyloučeno</string>
     <string name="settings_system_performance">Výkonnost</string>
     <string name="settings_system_process_runtime">Doba běhu procesů</string>
     <string name="settings_system_process_runtime_description">Spustit záplatování v odděleném procesu pro lepší stabilitu</string>
@@ -680,6 +700,8 @@ Rozměry obrázků musí být následující:
     <string name="disabled">Vypnuto</string>
     <string name="selected">Vybráno</string>
     <string name="not_selected">Nevybráno</string>
+    <string name="select_all">Vybrat vše</string>
+    <string name="deselect_all">Zrušit výběr všech</string>
     <string name="rename">Přejmenovat</string>
     <string name="import_">Importovat</string>
     <string name="export">Exportovat</string>

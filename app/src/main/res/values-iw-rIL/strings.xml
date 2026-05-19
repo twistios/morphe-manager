@@ -57,7 +57,7 @@
     <!-- Home Screen - Sources Management -->
     <string name="sources_management_title">מקורות תיקונים</string>
     <string name="sources_management_open_in_browser">פתח בדפדפן</string>
-    <string name="sources_management_failed_to_open_url">נכשל לפתוח כתובת אינטרנט</string>
+    <string name="sources_management_failed_to_open_url">כישלון בפתיחת כתובת אינטרנט</string>
     <string name="sources_management_prerelease_toggle">השתמש בתיקונים לפני הפצתם המלאה</string>
     <string name="sources_management_prerelease_toggle_description">קבל גישה מוקדמת לגרסה חדשה של תיקונים ניסיוניים</string>
     <string name="sources_management_experimental_versions_toggle">השתמש בגרסאות אפליקציה ניסיוניות</string>
@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">כן, עזור לי למצוא APK</string>
     <string name="home_apk_availability_no">לא, אני כבר מחזיק APK</string>
     <string name="home_apk_use_saved_with_version">השתמש באפאק שמור (גרסה %s)</string>
+    <string name="home_apk_use_installed_with_version">השתמש ב-APK מותקן (v%s)</string>
     <string name="home_app_info_no_saved_apk">אין אפאק שמור. תיקון ידרש לבחור את קובץ האפאק שוב</string>
     <string name="home_version_requires_android">דורש Android %s+‎</string>
     <string name="home_apk_no_compatible_versions_title">לא נתמך במכשיר זה</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">לא ניתן לקרוא את הקובץ. בדוק ש\'אחסון חיצוני\' אינו מוגבל על ידי הסוללה</string>
     <string name="home_invalid_apk_not_an_apk">הקובץ שנבחר אינו קובץ APK תקין</string>
     <string name="home_invalid_apk_io_error">נכשל בפתיחת הקובץ. אנא נסה שוב</string>
+    <string name="home_external_apk_expert_mode_required">תכונה זו זמינה רק במצב מומחה</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">מצב מומחה</string>
     <string name="expert_mode_search">חפש תיקונים</string>
     <string name="expert_mode_proceed">התקדמו לתיקון</string>
     <string name="expert_mode_disable_all">השבת את כולם</string>
+    <string name="expert_mode_disable_all_done">כל התיקונים מושבתים</string>
     <string name="expert_mode_enable_all">הפעל את כולם</string>
+    <string name="expert_mode_enable_all_done">כל התיקונים מופעלים</string>
     <string name="expert_mode_reset_to_default">להפעיל תיקונים מומלצים</string>
+    <string name="expert_mode_reset_to_default_done">התיקונים המומלצים הוחלו</string>
     <string name="expert_mode_restore_saved">שחזור בחירה שמורה</string>
+    <string name="expert_mode_restore_saved_done">שחזור הבחירה השמורה הסתיים</string>
     <string name="expert_mode_no_results">לא נמצאו תיקונים</string>
     <string name="expert_mode_universal_patches">עדכונים אוניברסליים</string>
     <string name="expert_mode_new_patches">חדש</string>
@@ -185,6 +191,7 @@
     <string name="patch_option_enter_number">הזן מספר</string>
     <string name="patch_option_enter_decimal">הזן ספרתי</string>
     <string name="patch_option_pick_folder">בחר תיקיה</string>
+    <string name="patch_option_pick_file">בחר קובץ</string>
     <string name="patch_option_list_duplicate">ערך זה כבר קיים</string>
     <string name="patch_option_list_empty">ערך לא יכול להיות ריק</string>
     <string name="patch_option_list_empty_state">עדיין לא נוספו ערכים</string>
@@ -263,6 +270,11 @@
     <string name="patcher_unknown_error">אירעה שגיאה לא ידועה</string>
     <string name="patcher_conflict_title">התנגשות חבילה</string>
     <string name="patcher_conflict_subtitle">עליך להסיר את ההתקנה של הגרסה הקיימת</string>
+    <string name="patcher_conflict_hint">האפליקציה שעברה תיקון משתמשת בתעודה שונה מזו של הגרסה המותקנת. הסרת ההתקנה תמחק את כל נתוני האפליקציה.</string>
+    <string name="patcher_installed_conflict_title">יש להסיר התקנה</string>
+    <string name="patcher_installed_conflict_body">"Morphe חותם על אפליקציות שעברו שינוי באמצעות תעודה משלו, השונה מהמקורית. Android דורש הסרת הגרסה הקיימת לפני שאפשר להתקין את האפליקציה שעברה שינוי.
+
+הסרת ההתקנה תמחק לצמיתות את כל נתוני האפליקציה."</string>
     <string name="patcher_install_error_title">שגיאת התקנה</string>
     <string name="patcher_install_error_subtitle">נסה להסיר ולהתקין שוב</string>
     <string name="patcher_ready_to_install_subtitle">לחץ על הכפתור למטה כדי להתקין</string>
@@ -288,6 +300,10 @@
     <string name="patcher_step_group_saving">שמירה</string>
     <string name="patcher_step_write_patched">כתיבת קובץ APK מתוקן</string>
     <string name="patcher_step_sign_apk">חתימה על קובץ APK מתוקן</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">הגנה על תיקון רקע</string>
+    <string name="battery_optimization_dialog_description">ייתכן שמכשירים מסוימים יפסיקו את המתקן כאשר האפליקציה מצומצמת. אפשר ל-Morphe לפעול ללא הגבלות סוללה כדי להבטיח שהתיקון יושלם באופן מהימן</string>
+    <string name="battery_optimization_not_now">לא עכשיו</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">התיקון מתבצע…</string>
     <string name="patcher_notification_text">הקש כדי לחזור למתקן</string>
@@ -538,6 +554,10 @@ morphe_adaptive_monochrome_custom.xml
     <string name="settings_prompt_installer_on_install">הצג דיאלוג בחירת התקן בכל התקנה של אפליקציה שחורה</string>
     <string name="settings_prompt_installer_on_install_description">הצג דיאלוג בחירת התקן בכל התקנה של אפליקציה שחורה</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">מיטוב הסוללה</string>
+    <string name="settings_system_battery_optimization_description">מונע מהמערכת לעצור את המעדכן כאשר Morphe ממזער</string>
+    <string name="settings_system_battery_optimization_excluded">לא כלול</string>
+    <string name="settings_system_battery_optimization_not_excluded">כלול</string>
     <string name="settings_system_performance">מוצא איבוד... </string>
     <string name="settings_system_process_runtime">מוצא איבוד... </string>
     <string name="settings_system_process_runtime_description">מוצא איבוד... </string>
@@ -664,6 +684,8 @@ morphe_adaptive_monochrome_custom.xml
     <string name="disabled">מושבת</string>
     <string name="selected">נבחר</string>
     <string name="not_selected">לא נבחר</string>
+    <string name="select_all">בחר הכל</string>
+    <string name="deselect_all">בטל בחירה של הכל</string>
     <string name="rename">שנה שם</string>
     <string name="import_">ייבוא</string>
     <string name="export">יְצוּא</string>

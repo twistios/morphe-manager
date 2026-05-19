@@ -17,9 +17,6 @@ import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.statusBarsPadding
@@ -40,6 +37,7 @@ import app.morphe.manager.domain.installer.InstallerManager
 import app.morphe.manager.domain.manager.PreferencesManager
 import app.morphe.manager.ui.model.State
 import app.morphe.manager.ui.screen.patcher.*
+import app.morphe.manager.ui.screen.shared.MorpheAnimations
 import app.morphe.manager.ui.screen.settings.advanced.NotificationPermissionDialog
 import app.morphe.manager.ui.screen.settings.system.InstallerSelectionDialog
 import app.morphe.manager.ui.viewmodel.InstallViewModel
@@ -242,15 +240,37 @@ fun PatcherScreen(
     val isInstalling by remember { derivedStateOf { installViewModel.installState is InstallViewModel.InstallState.Installing } }
     val isInstalled by remember { derivedStateOf { installViewModel.installState is InstallViewModel.InstallState.Installed } }
     val isError by remember { derivedStateOf { installViewModel.installState is InstallViewModel.InstallState.Error } }
-    val isConflict by remember { derivedStateOf { installViewModel.installState is InstallViewModel.InstallState.Conflict } }
+    // Conflict is expected when patching from installed (non-root): handled via dialog instead of UI state
+    val autoHandleConflict = patcherViewModel.patchedFromInstalledDevice && !usingMountInstall
+    val isConflict by remember { derivedStateOf {
+        installViewModel.installState is InstallViewModel.InstallState.Conflict && !autoHandleConflict
+    } }
     val installedPackageName by remember { derivedStateOf { installViewModel.installedPackageName } }
     val conflictPackageName by remember { derivedStateOf { (installViewModel.installState as? InstallViewModel.InstallState.Conflict)?.packageName } }
     val errorMessage by remember { derivedStateOf { (installViewModel.installState as? InstallViewModel.InstallState.Error)?.message } }
+
+    val showInstalledSourceConflictDialog = remember { mutableStateOf(false) }
 
     LaunchedEffect(installState) {
         if (installState is InstallViewModel.InstallState.Installed) {
             patcherViewModel.triggerNotificationPromptIfNeeded()
         }
+        if (installState is InstallViewModel.InstallState.Conflict && autoHandleConflict) {
+            showInstalledSourceConflictDialog.value = true
+        }
+    }
+
+    if (showInstalledSourceConflictDialog.value) {
+        InstalledSourceConflictDialog(
+            onUninstall = {
+                showInstalledSourceConflictDialog.value = false
+                conflictPackageName?.let { installViewModel.requestUninstall(it) }
+            },
+            onDismiss = {
+                showInstalledSourceConflictDialog.value = false
+                installViewModel.resetInstallState()
+            }
+        )
     }
 
     // Notification prompt dialog
@@ -340,6 +360,14 @@ fun PatcherScreen(
         )
     }
 
+    // Battery optimization pre-flight dialog.
+    // Shown once when the app is not excluded from battery optimization
+    if (patcherViewModel.batteryOptimizationDialog) {
+        BatteryOptimizationDialog(
+            onResult = patcherViewModel::onBatteryOptimizationDialogResult
+        )
+    }
+
     // Error dialog
     if (state.showErrorDialog) {
         PatcherErrorDialog(
@@ -404,10 +432,7 @@ fun PatcherScreen(
 
         AnimatedContent(
             targetState = if (showSuccessScreen) state.currentPatcherState else PatcherState.IN_PROGRESS,
-            transitionSpec = {
-                fadeIn(animationSpec = tween(800)) togetherWith
-                        fadeOut(animationSpec = tween(800))
-            },
+            transitionSpec = MorpheAnimations.fadeCrossfade(800),
             label = "patcher_state_animation"
         ) { patcherState ->
             when (patcherState) {

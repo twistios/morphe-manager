@@ -5,6 +5,7 @@
     <string name="home_not_patched_yet">Još nije patchano</string>
     <string name="home_no_patches_available">Nema dostupnih patcheva</string>
     <string name="home_app_hide_title">Sakriti ovu aplikaciju?</string>
+    <string name="home_app_hide_message">Ova će aplikacija biti skrivena na početnom zaslonu. Kasnije je možete vratiti iz skrivenih aplikacija pomoću tipke pri dnu popisa</string>
     <string name="home_app_will_be_hidden">Ova će aplikacija biti skrivena</string>
     <string name="home_app_show_hidden">Prikaži skrivene aplikacije</string>
     <string name="home_app_no_hidden">Nema skrivenih aplikacija</string>
@@ -23,6 +24,7 @@
     <string name="home_update_skipped_metered">Ažuriranja preskočena</string>
     <string name="home_update_skipped_metered_subtitle">Mobilni podaci su aktivni</string>
     <string name="home_updating_sources">Ažuriranje izvora…</string>
+    <string name="home_update_progress_format">%s obrađeno</string>
     <string name="home_update_success">Ažuriranje izvora dovršeno</string>
     <string name="home_update_success_subtitle">Vaši izvori su ažurirani</string>
     <string name="home_sources_are_loading">Izvori se učitavaju, molimo pričekajte…</string>
@@ -61,6 +63,10 @@
     <string name="sources_management_experimental_versions_toggle">Koristi eksperimentalne verzije aplikacija</string>
     <string name="sources_management_experimental_versions_toggle_description">Patchaj eksperimentalne ciljeve aplikacije ako su dostupni</string>
     <string name="sources_management_already_exists">Ovaj izvor je već dodan</string>
+    <string name="sources_management_invalid_url">Nevažeći izvor poveznice. Molimo provjerite adresu i pokušajte ponovno</string>
+    <string name="sources_management_metadata_unavailable">Metapodaci N/A</string>
+    <string name="sources_management_metadata_unavailable_hint">Datoteka udaljenih metapodataka nije dostupna. Patchanje s instaliranim paketom i dalje radi, ali automatsko ažuriranje je onemogućeno za ovaj izvor</string>
+    <string name="sources_management_metadata_unavailable_hint_missing">Paket patcheva nije moguće preuzeti. Izvorna poveznica možda nije ispravna ili datoteka ne postoji.</string>
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Prikaži naziv</string>
     <string name="sources_dialog_rename">Preimenuj izvor patcha</string>
@@ -75,12 +81,18 @@
     <string name="sources_dialog_remote_url_formats_title">Primjeri:</string>
     <string name="sources_dialog_local">Lokalno</string>
     <string name="sources_dialog_local_file">Odaberite izvornu datoteku patcha</string>
+    <string name="sources_dialog_local_file_tap_hint">Dodirnite za pregled pohrane</string>
     <string name="sources_dialog_local_file_description">Odaberite izvornu .mpp datoteku patcha iz pohrane</string>
+    <string name="sources_dialog_local_invalid_extension">Datoteka mora imati ekstenziju .mpp</string>
+    <string name="sources_dialog_url_valid">Valjani repozitorij ili URL JSON</string>
+    <string name="sources_dialog_url_invalid">Poveznica mora voditi na GitHub/GitLab repo ili .json datoteku</string>
     <string name="sources_dialog_local_change_file">Promijeni datoteku</string>
     <string name="sources_dialog_preinstalled">Unaprijed instalirano</string>
     <string name="sources_update_success">Uspješno ažurirano</string>
     <string name="sources_update_unavailable">Nema dostupnih ažuriranja</string>
     <string name="sources_download_fail">Preuzimanje izvora nije uspjelo: %s</string>
+    <string name="sources_download_fail_named">\"%s\" se nije mogao ažurirati. Provjerite internetsku vezu i pokušajte ponovno</string>
+    <string name="sources_download_endpoint_not_found">\'%s\': metapodaci patcha nisu pronađeni</string>
     <string name="sources_patch_expert_badge">Ekspert</string>
     <string name="sources_patch_expert_badge_tooltip">Omogućite Ekspert način rada u Postavkama da biste ručno uključili ovaj patch</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -93,6 +105,7 @@
     <string name="home_apk_availability_yes">Da, pomozi mi pronaći aplikaciju</string>
     <string name="home_apk_availability_no">Ne, već imam aplikaciju</string>
     <string name="home_apk_use_saved_with_version">Koristi spremljenu aplikaciju(v%s)</string>
+    <string name="home_apk_use_installed_with_version">Koristi instaliranu aplikaciju(v%s)</string>
     <string name="home_app_info_no_saved_apk">Nema spremljene aplikacije. Patchanje će zahtijevati ponovni odabir aplikacije</string>
     <string name="home_version_requires_android">Zahtijeva Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Nije podržano na ovom uređaju</string>
@@ -119,6 +132,7 @@
     <string name="home_invalid_apk_unreadable">Nije moguće pročitati datoteku. Provjerite je li \'Vanjska pohrana\' ograničena baterijom</string>
     <string name="home_invalid_apk_not_an_apk">Odabrana datoteka nije valjani APK</string>
     <string name="home_invalid_apk_io_error">Nije moguće otvoriti datoteku. Molimo pokušajte ponovo</string>
+    <string name="home_external_apk_expert_mode_required">Ova je značajka dostupna samo u načinu rada za stručnjake</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Napredni način</string>
     <string name="expert_mode_search">Pretraživanje patcheva</string>
@@ -173,6 +187,7 @@ Za najbolje rezultate,  patchanje ove aplikacija preporučuje &lt;b&gt;cijeli AP
     <string name="patch_option_enter_number">Unesite broj</string>
     <string name="patch_option_enter_decimal">Unesite decimalu</string>
     <string name="patch_option_pick_folder">Odaberite mapu</string>
+    <string name="patch_option_pick_file">Odaberite datoteku</string>
     <string name="patch_option_list_duplicate">Ova vrijednost već postoji</string>
     <string name="patch_option_list_empty">Vrijednost ne može biti prazna</string>
     <string name="patch_option_list_empty_state">Još nema dodanih vrijednosti</string>
@@ -251,12 +266,18 @@ Za najbolje rezultate,  patchanje ove aplikacija preporučuje &lt;b&gt;cijeli AP
     <string name="patcher_unknown_error">Došlo je do nepoznate pogreške</string>
     <string name="patcher_conflict_title">Konflikt paketa</string>
     <string name="patcher_conflict_subtitle">Morate deinstalirati postojeću verziju</string>
+    <string name="patcher_conflict_hint">Patchana aplikacija koristi drugačiji certifikat od instalirane verzije. Deinstaliranjem će se izbrisati svi podaci aplikacije</string>
+    <string name="patcher_installed_conflict_title">Potrebna je deinstalacija</string>
+    <string name="patcher_installed_conflict_body">"Morphe potpisuje patchane aplikacije vlastitim certifikatom, što se razlikuje od originala. Android zahtijeva uklanjanje postojeće verzije prije nego što se patchana aplikacija može instalirati.
+
+Deinstaliranje će trajno izbrisati sve podatke aplikacije"</string>
     <string name="patcher_install_error_title">Pogreška pri instalaciji</string>
     <string name="patcher_install_error_subtitle">Pokušajte deinstalirati i instalirati ponovo</string>
     <string name="patcher_ready_to_install_subtitle">Pritisnite tipku ispod za instalaciju</string>
     <string name="patcher_ready_to_mount_subtitle">Pritisnite tipku ispod da učitate</string>
     <string name="patcher_storage_permission_dialog_title">Nije moguće pristupiti putanji pohrane</string>
     <string name="patcher_incompatible_patcher_title">Potrebno je ažuriranje</string>
+    <string name="patcher_incompatible_patcher_description">Paket &lt;b&gt;%1$s&lt;/b&gt; zahtijeva verziju patchera &lt;b&gt;%2$s&lt;/b&gt; ili noviju. Molimo ažurirajte Morphe kako biste patchali ovu aplikaciju</string>
     <string name="patcher_incompatible_patcher_update_button">Preuzmite i ažurirajte Morphe</string>
     <string name="patcher_storage_permission_description_api30">Jedna ili više opcija patcha upućuju na putanje koje Morphe ne može pročitati. Omogućite pristup pohrani i dodirnite tipku, nakon čega će se patchanje automatski pokrenuti.</string>
     <string name="patcher_storage_permission_description_legacy">Jedna ili više opcija zakrpe upućuju na putanje kojima se ne može pristupiti. Ažurirajte putanje u opcijama zakrpe i pokušajte ponovno.</string>
@@ -275,6 +296,10 @@ Za najbolje rezultate,  patchanje ove aplikacija preporučuje &lt;b&gt;cijeli AP
     <string name="patcher_step_group_saving">Spremanje</string>
     <string name="patcher_step_write_patched">Pisanje patchane aplikacije</string>
     <string name="patcher_step_sign_apk">Potpisivanje patchane aplikacije</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Zaštita patchanja u pozadini</string>
+    <string name="battery_optimization_dialog_description">Neki uređaji mogu zaustaviti patcher  kada je aplikacija umanjena. Dopustite Morpheu da radi bez ograničenja baterije kako biste osigurali pouzdano dovršavanje patchanja</string>
+    <string name="battery_optimization_not_now">Ne sada</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patchanje u tijeku …</string>
     <string name="patcher_notification_text">Dodirnite da se vratite u patcher</string>
@@ -373,6 +398,7 @@ Za najbolje rezultate,  patchanje ove aplikacija preporučuje &lt;b&gt;cijeli AP
     <string name="settings_appearance_app_icon_dark_2">Praznina</string>
     <string name="settings_appearance_app_icon_dark_3">Indigo</string>
     <string name="settings_appearance_app_icon_change_dialog_title">Promijeniti ikonu aplikacije?</string>
+    <string name="settings_appearance_app_icon_change_dialog_message">Promijeniti u &lt;b&gt;%s&lt;/b&gt; i pokrenuti ponovno?</string>
     <string name="settings_appearance_app_icon_change_dialog_confirm">Promijeni ikonu</string>
     <!-- Settings - Advanced Tab - Updates Section -->
     <string name="settings_advanced_updates">Ažuriranja</string>
@@ -394,6 +420,7 @@ Za najbolje rezultate,  patchanje ove aplikacija preporučuje &lt;b&gt;cijeli AP
     <!-- Notification content -->
     <string name="notification_manager_update_title">Dostupno ažuriranje aplikacije Morphe</string>
     <string name="notification_bundle_update_title">Nova patcha dostupna</string>
+    <string name="notification_update_text">Verzija %s je spremna za preuzimanje</string>
     <string name="notification_bundle_update_text_unversioned">Dodirnite za otvaranje Morphea i ažuriranje</string>
     <string name="notification_permission_dialog_title">Dozvoli obavijesti</string>
     <string name="notification_permission_dialog_description">Morphe treba dopuštenje za obavijesti kako bi vas upozorio kada su ažuriranja dostupna u pozadini</string>
@@ -539,6 +566,10 @@ Dimenzije slike moraju biti sljedeće:
     <string name="settings_prompt_installer_on_install">Pitaj za instalacijski program prilikom instalacije</string>
     <string name="settings_prompt_installer_on_install_description">Prikaži dijalog za odabir instalacijskog programa svaki put kada instalirate patchanu aplikaciju</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Optimizacija baterije</string>
+    <string name="settings_system_battery_optimization_description">Sprječava sustav da zaustavi patchanje kada je Morphe minimiziran</string>
+    <string name="settings_system_battery_optimization_excluded">Isključeno</string>
+    <string name="settings_system_battery_optimization_not_excluded">Nije isključeno</string>
     <string name="settings_system_performance">Performanse</string>
     <string name="settings_system_process_runtime">Izvođenje procesa</string>
     <string name="settings_system_process_runtime_description">Pokrenite patchanje u zasebnom procesu za bolju stabilnost</string>

@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Да, помози ми да нађем АПК</string>
     <string name="home_apk_availability_no">Ne, već imam APK</string>
     <string name="home_apk_use_saved_with_version">Koristišć saćuvani APK (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Koristite instalovanu APK datoteku (v%s)</string>
     <string name="home_app_info_no_saved_apk">Nema saćuvanog APK-a. Patching zahtijeva ponovno odabir APK datoteke</string>
     <string name="home_version_requires_android">Захтева Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Није подржано на овом уређају</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">Није могуће прочитати датотеку. Проверите да \'Екстерна складишта\' није ограничено од стране батерије</string>
     <string name="home_invalid_apk_not_an_apk">Избрана датотека није валидан APK.</string>
     <string name="home_invalid_apk_io_error">Није успело отварање датотеке. Поново покушајте.</string>
+    <string name="home_external_apk_expert_mode_required">Ова функција је доступна само у режиму за напредне кориснике</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Експерт мод</string>
     <string name="expert_mode_search">Претражи печеве</string>
     <string name="expert_mode_proceed">Продужи ка поправљању</string>
     <string name="expert_mode_disable_all">Онемогући све</string>
+    <string name="expert_mode_disable_all_done">Сви закрпе су деактивиране</string>
     <string name="expert_mode_enable_all">Омогући све</string>
+    <string name="expert_mode_enable_all_done">Све закрпе су активиране</string>
     <string name="expert_mode_reset_to_default">Омогући препоручене исправке</string>
+    <string name="expert_mode_reset_to_default_done">Примењене препоручене закрпе</string>
     <string name="expert_mode_restore_saved">Поврати сачувани избор</string>
+    <string name="expert_mode_restore_saved_done">Враћена сачувана селекција</string>
     <string name="expert_mode_no_results">Нema пронађених печева</string>
     <string name="expert_mode_universal_patches">Универзалне површине</string>
     <string name="expert_mode_new_patches">Ново</string>
@@ -185,6 +191,7 @@
     <string name="patch_option_enter_number">Унесите број</string>
     <string name="patch_option_enter_decimal">Унесите децимално</string>
     <string name="patch_option_pick_folder">Изаберите фасциклу</string>
+    <string name="patch_option_pick_file">Изаберите датотеку</string>
     <string name="patch_option_list_duplicate">Ova vrednost već postoji</string>
     <string name="patch_option_list_empty">Vrednost ne može biti prazna</string>
     <string name="patch_option_list_empty_state">Nisu dodate nijedne vrednosti</string>
@@ -262,6 +269,11 @@
     <string name="patcher_unknown_error">Дошло је до непознате грешке</string>
     <string name="patcher_conflict_title">Конфликт пакета</string>
     <string name="patcher_conflict_subtitle">Морате деинсталирати постојећу верзију</string>
+    <string name="patcher_conflict_hint">Modifikovana aplikacija koristi drugačiji sertifikat od instalirane verzije. Deinstalacija će obrisati sve podatke aplikacije.</string>
+    <string name="patcher_installed_conflict_title">Потребно је деинсталирати</string>
+    <string name="patcher_installed_conflict_body">"Morphe потписује поправљене апликације сопственим сертификатом, који се разликује од оригиналног. Android захтева уклањање постојеће верзије пре него што се поправљена апликација може инсталирати.
+
+Деинсталација ће трајно избрисати све податке апликације"</string>
     <string name="patcher_install_error_title">Грешка при инсталацији</string>
     <string name="patcher_install_error_subtitle">Покушајте деинсталирати па поново инсталирати</string>
     <string name="patcher_ready_to_install_subtitle">Притисните дугме испод за инсталирање</string>
@@ -287,6 +299,10 @@
     <string name="patcher_step_group_saving">Чување</string>
     <string name="patcher_step_write_patched">Писање закрпљене АПК датотеке</string>
     <string name="patcher_step_sign_apk">Потписивање закрпљене АПК датотеке</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Заштита од позадинског подешавања</string>
+    <string name="battery_optimization_dialog_description">На неким уређајима, подешавач може бити заустављен када је апликација минимизована. Дозволите Morphe-у да ради без ограничења батерије како бисте осигурали поуздано подешавање.</string>
+    <string name="battery_optimization_not_now">Касније</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Закрпљавање је у току…</string>
     <string name="patcher_notification_text">Додирните да бисте се вратили на поправку</string>
@@ -553,6 +569,10 @@ morphe_header_custom_dark.png
     <string name="settings_prompt_installer_on_install">Прикажи дијалог за избор инсталатора при инсталацији.</string>
     <string name="settings_prompt_installer_on_install_description">Прикажи дијалог за избор инсталатора сваки пут када инсталирате патчену апликацију.</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Оптимизација батерије</string>
+    <string name="settings_system_battery_optimization_description">Спречава да систем заустави патчер када је Morphe мини-мизиран</string>
+    <string name="settings_system_battery_optimization_excluded">Изузет</string>
+    <string name="settings_system_battery_optimization_not_excluded">Није изузет</string>
     <string name="settings_system_performance">Начин</string>
     <string name="settings_system_process_runtime">Трајање времена</string>
     <string name="settings_system_process_runtime_description">Потражите патчирање у одвој процесу за бољу стабилност</string>
@@ -679,6 +699,8 @@ morphe_header_custom_dark.png
     <string name="disabled">Онемогућен</string>
     <string name="selected">Одабрано</string>
     <string name="not_selected">Није одбрано</string>
+    <string name="select_all">Изаберите све</string>
+    <string name="deselect_all">Поништи све изборе</string>
     <string name="rename">Преименуј</string>
     <string name="import_">Увоз</string>
     <string name="export">Извези</string>

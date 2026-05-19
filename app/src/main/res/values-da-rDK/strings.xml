@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Ja, hjælp med at finde en APK</string>
     <string name="home_apk_availability_no">Nej, jeg har allerede en APK</string>
     <string name="home_apk_use_saved_with_version">Brug gemt APK (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Brug installeret APK (v%s)</string>
     <string name="home_app_info_no_saved_apk">Ingen gemt APK. Patchning kræver at du vælger APK-filen igen</string>
     <string name="home_version_requires_android">Kræver Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Ikke understøttet på denne enhed</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">Kunne ikke læse filen. Tjek at \'Ekstern lagerplads\' ikke er batteribegrænset</string>
     <string name="home_invalid_apk_not_an_apk">Den valgte fil er ikke en gyldig APK</string>
     <string name="home_invalid_apk_io_error">Kunne ikke åbne filen. Prøv igen</string>
+    <string name="home_external_apk_expert_mode_required">Denne funktion er kun tilgængelig i Eksperttilstand</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Experttilstand</string>
     <string name="expert_mode_search">Søg patches</string>
     <string name="expert_mode_proceed">Gå videre til patching</string>
     <string name="expert_mode_disable_all">Deaktiver alle</string>
+    <string name="expert_mode_disable_all_done">Alle patches deaktiveret</string>
     <string name="expert_mode_enable_all">Aktiver alle</string>
+    <string name="expert_mode_enable_all_done">Alle patches aktiveret</string>
     <string name="expert_mode_reset_to_default">Aktivér anbefalede patches</string>
+    <string name="expert_mode_reset_to_default_done">Anbefalede patches anvendt</string>
     <string name="expert_mode_restore_saved">Gendan gemt valg</string>
+    <string name="expert_mode_restore_saved_done">Gemt valg er gendannet</string>
     <string name="expert_mode_no_results">Ingen patches fundet</string>
     <string name="expert_mode_universal_patches">Universelle patches</string>
     <string name="expert_mode_new_patches">Ny</string>
@@ -185,6 +191,7 @@ For de bedste resultater anbefaler denne app at patche en &lt;b&gt;fuld APK&lt;/
     <string name="patch_option_enter_number">Angiv tal</string>
     <string name="patch_option_enter_decimal">Angiv decimal</string>
     <string name="patch_option_pick_folder">Vælg mappe</string>
+    <string name="patch_option_pick_file">Vælg fil</string>
     <string name="patch_option_list_duplicate">Denne værdi eksisterer allerede</string>
     <string name="patch_option_list_empty">Værdien må ikke være tom</string>
     <string name="patch_option_list_empty_state">Ingen værdier tilføjet endnu</string>
@@ -263,6 +270,11 @@ For de bedste resultater anbefaler denne app at patche en &lt;b&gt;fuld APK&lt;/
     <string name="patcher_unknown_error">Ukendt fejl opstod</string>
     <string name="patcher_conflict_title">Pakke konflikt</string>
     <string name="patcher_conflict_subtitle">Du skal afinstallere den eksisterende version</string>
+    <string name="patcher_conflict_hint">Den patched app bruger et andet certifikat end den installerede version. Afinstallation vil slette alle app-data</string>
+    <string name="patcher_installed_conflict_title">Afinstallation påkrævet</string>
+    <string name="patcher_installed_conflict_body">"Morphe signerer patched apps med sit eget certifikat, hvilket adskiller sig fra det originale. Android kræver, at den eksisterende version fjernes, før den patched app kan installeres.
+
+Afinstallation sletter permanent alle appdata."</string>
     <string name="patcher_install_error_title">Installationsfejl</string>
     <string name="patcher_install_error_subtitle">Prøv at afinstallere og installere igen</string>
     <string name="patcher_ready_to_install_subtitle">Tryk på knappen nedenfor for at installere</string>
@@ -288,6 +300,10 @@ For de bedste resultater anbefaler denne app at patche en &lt;b&gt;fuld APK&lt;/
     <string name="patcher_step_group_saving">Gemmer</string>
     <string name="patcher_step_write_patched">Skriver patchet APK-fil</string>
     <string name="patcher_step_sign_apk">Signerer patchet APK-fil</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Beskyttelse mod baggrundspatching</string>
+    <string name="battery_optimization_dialog_description">Nogle enheder kan stoppe patcheren, når appen minimeres. Tillad Morphe at køre uden batterirestriktioner for at sikre, at patching fuldføres pålideligt</string>
+    <string name="battery_optimization_not_now">Ikke nu</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patching i gang…</string>
     <string name="patcher_notification_text">Tryk for at vende tilbage til patcheren</string>
@@ -554,6 +570,10 @@ Størrelsesformatet skal være som følger:
     <string name="settings_prompt_installer_on_install">Forespørg om installer ved installering</string>
     <string name="settings_prompt_installer_on_install_description">Vis installer-valgdialog hver gang du installerer en patchet app</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Batterioptimering</string>
+    <string name="settings_system_battery_optimization_description">Forhindrer systemet i at stoppe patcheren, når Morphe er minimeret.</string>
+    <string name="settings_system_battery_optimization_excluded">Ekskluderet</string>
+    <string name="settings_system_battery_optimization_not_excluded">Ikke ekskluderet</string>
     <string name="settings_system_performance">Ydelse</string>
     <string name="settings_system_process_runtime">Proces runtime</string>
     <string name="settings_system_process_runtime_description">Kør patching i separat proces for bedre stabilitet</string>
@@ -680,6 +700,8 @@ Størrelsesformatet skal være som følger:
     <string name="disabled">Deaktiveret</string>
     <string name="selected">Valgt</string>
     <string name="not_selected">Ikke valgt</string>
+    <string name="select_all">Vælg alle</string>
+    <string name="deselect_all">Fravælg alle</string>
     <string name="rename">Omdøb</string>
     <string name="import_">Importer</string>
     <string name="export">Eksporter</string>

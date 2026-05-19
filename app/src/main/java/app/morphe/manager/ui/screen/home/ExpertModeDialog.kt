@@ -6,6 +6,7 @@
 package app.morphe.manager.ui.screen.home
 
 import android.annotation.SuppressLint
+import androidx.activity.compose.BackHandler
 import androidx.compose.animation.*
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -30,6 +31,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
@@ -94,7 +96,11 @@ fun ExpertModeDialog(
                         if (!option.required) return@any false
                         val savedValue = patchValues?.get(option.key)
                         val effectiveValue = savedValue ?: option.default
-                        effectiveValue == null || (effectiveValue is String && effectiveValue.isBlank())
+                        // Treat blank as missing only when the developer's own default is non-blank
+                        effectiveValue == null || (
+                            effectiveValue is String && effectiveValue.isBlank() &&
+                            !(option.default is String && option.default.isBlank())
+                        )
                     } == true
                     if (hasMissing) add(patch.name)
                 }
@@ -163,6 +169,11 @@ fun ExpertModeDialog(
         compactPadding = true,
         scrollable = false
     ) {
+        BackHandler(enabled = searchVisible) {
+            searchQuery = ""
+            searchVisible = false
+        }
+
         Column(
             modifier = Modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -545,9 +556,9 @@ private fun BundlePatchControls(
 ) {
     val context = LocalContext.current
 
-    // Returns a lambda that shows a toast with [label] and then executes [action].
-    fun withToast(label: String, action: () -> Unit): () -> Unit = {
-        context.toast(label)
+    // Shows a confirmation toast with [doneMessage] and then executes [action]
+    fun withToast(doneMessage: String, action: () -> Unit): () -> Unit = {
+        context.toast(doneMessage)
         action()
     }
 
@@ -556,12 +567,17 @@ private fun BundlePatchControls(
     val restoreLabel = stringResource(R.string.expert_mode_restore_saved)
     val deselectAllLabel = stringResource(R.string.expert_mode_disable_all)
 
+    val enabledDone = stringResource(R.string.expert_mode_enable_all_done)
+    val disabledDone = stringResource(R.string.expert_mode_disable_all_done)
+    val resetDone = stringResource(R.string.expert_mode_reset_to_default_done)
+    val restoredDone = stringResource(R.string.expert_mode_restore_saved_done)
+
     Row(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(12.dp, Alignment.CenterHorizontally)
     ) {
         ActionPillButton(
-            onClick = withToast(selectAllLabel, onSelectAll),
+            onClick = withToast(enabledDone, onSelectAll),
             icon = Icons.Outlined.DoneAll,
             contentDescription = selectAllLabel,
             tooltip = selectAllLabel,
@@ -574,7 +590,7 @@ private fun BundlePatchControls(
             )
         )
         ActionPillButton(
-            onClick = withToast(defaultLabel, onResetToDefault),
+            onClick = withToast(resetDone, onResetToDefault),
             icon = Icons.Outlined.Recommend,
             contentDescription = defaultLabel,
             tooltip = defaultLabel,
@@ -586,7 +602,7 @@ private fun BundlePatchControls(
             )
         )
         ActionPillButton(
-            onClick = withToast(restoreLabel, onRestoreSaved),
+            onClick = withToast(restoredDone, onRestoreSaved),
             icon = Icons.Outlined.History,
             contentDescription = restoreLabel,
             tooltip = restoreLabel,
@@ -599,7 +615,7 @@ private fun BundlePatchControls(
             )
         )
         ActionPillButton(
-            onClick = withToast(deselectAllLabel, onDeselectAll),
+            onClick = withToast(disabledDone, onDeselectAll),
             icon = Icons.Outlined.ClearAll,
             contentDescription = deselectAllLabel,
             tooltip = deselectAllLabel,
@@ -613,7 +629,6 @@ private fun BundlePatchControls(
         )
     }
 }
-
 
 /**
  * Individual patch card with toggle and options button.
@@ -795,6 +810,7 @@ private sealed interface OptionKind {
     data object PathWithPresets : OptionKind
     data object StringDropdown  : OptionKind
     data object Path            : OptionKind
+    data object FilePath        : OptionKind
     data object StringText      : OptionKind
     data object BooleanToggle   : OptionKind
     data object IntLong         : OptionKind
@@ -832,20 +848,27 @@ private fun resolveOptionKind(option: Option<*>, value: Any?): OptionKind {
         // String with presets: pure dropdown
         isString && option.presets?.isNotEmpty() == true -> OptionKind.StringDropdown
 
-        // Path/folder string without presets: file picker + optional creator buttons
+        // Individual file path string: file picker (not a folder)
+        isString && option.presets == null &&
+                option.description.contains("file path", ignoreCase = true) -> OptionKind.FilePath
+
+        // Path/folder string without presets: folder picker + optional creator buttons
         isString && option.key != "customName" && (
                 option.key.contains("icon",   ignoreCase = true) ||
                         option.key.contains("header", ignoreCase = true) ||
                         option.key.contains("custom", ignoreCase = true) ||
-                        option.description.contains("folder",   ignoreCase = true) ||
-                        option.description.contains("image",    ignoreCase = true) ||
-                        option.description.contains("mipmap",   ignoreCase = true) ||
-                        option.description.contains("drawable", ignoreCase = true)
+                        option.description.contains("folder",    ignoreCase = true) ||
+                        option.description.contains("image",     ignoreCase = true) ||
+                        option.description.contains("mipmap",    ignoreCase = true) ||
+                        option.description.contains("drawable",  ignoreCase = true)
                 ) -> OptionKind.Path
 
-        // Comma-separated string
-        isString && option.presets == null &&
-                (value is String && value.contains(",")) -> OptionKind.StringList
+        // Comma-separated string: detected by value content or explicit description hint
+        isString && option.presets == null && (
+                (value is String && value.contains(",")) ||
+                        option.description.contains("separated by commas", ignoreCase = true) ||
+                        option.description.contains("comma-separated",     ignoreCase = true)
+                ) -> OptionKind.StringList
 
         // Plain string text field
         isString -> OptionKind.StringText
@@ -1010,6 +1033,14 @@ private fun PatchOptionsDialog(
                         value = value?.toString() ?: "",
                         packageName = packageName,
                         isDefaultBundle = isDefaultBundle,
+                        required = option.required,
+                        onValueChange = { onValueChange(key, it) }
+                    )
+
+                    OptionKind.FilePath -> FilePathInputOption(
+                        title = option.title,
+                        description = option.description,
+                        value = value?.toString() ?: "",
                         required = option.required,
                         onValueChange = { onValueChange(key, it) }
                     )
@@ -1385,6 +1416,54 @@ private fun PathInputOption(
                 showHeaderCreator.value = false
             }
         )
+    }
+}
+
+/**
+ * Individual file path input with a file picker button.
+ * Used for options whose description mentions "file path".
+ */
+@Composable
+private fun FilePathInputOption(
+    title: String,
+    description: String,
+    value: String,
+    required: Boolean = false,
+    onValueChange: (String) -> Unit
+) {
+    val isInvalid = required && value.isBlank()
+
+    val filePicker = rememberAdaptiveFilePicker(
+        mimeTypes = arrayOf("*/*")
+    ) { uri ->
+        uri?.toFilePath()?.let { onValueChange(it) }
+    }
+
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        MorpheDialogTextField(
+            value = value,
+            onValueChange = onValueChange,
+            label = {
+                Text(if (required) "$title *" else title)
+            },
+            placeholder = {
+                Text("/storage/emulated/0/file")
+            },
+            isError = isInvalid,
+            showClearButton = true,
+            onFilePickerClick = { filePicker() }
+        )
+
+        if (description.isNotBlank()) {
+            Text(
+                text = description,
+                style = MaterialTheme.typography.bodySmall,
+                color = LocalDialogSecondaryTextColor.current
+            )
+        }
     }
 }
 

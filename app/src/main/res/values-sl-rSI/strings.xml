@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Da, pomagajte mi najti APK</string>
     <string name="home_apk_availability_no">Ne, že imam APK</string>
     <string name="home_apk_use_saved_with_version">Uporabite shranjeno APK (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Uporabi nameščeno datoteko APK (v%s)</string>
     <string name="home_app_info_no_saved_apk">Ni shranjene APK. Popravilo bo zahtevalo ponovno izbiro datoteke APK.</string>
     <string name="home_version_requires_android">Zahteva Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Ni podprto na tej napravi</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">Datoteke ni bilo mogoče prebrati. Preverite, ali \'Zunanji pomnilnik\' ni omejen zaradi porabe baterije</string>
     <string name="home_invalid_apk_not_an_apk">Izbrana datoteka ni veljavna datoteka APK</string>
     <string name="home_invalid_apk_io_error">Ni bilo mogoče odpreti datoteke. Poskusite znova</string>
+    <string name="home_external_apk_expert_mode_required">Ta funkcija je na voljo samo v strokovnem načinu</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Strokovni način</string>
     <string name="expert_mode_search">Išči popravke</string>
     <string name="expert_mode_proceed">Pojdi na popravilo</string>
     <string name="expert_mode_disable_all">Onemogoči vse</string>
+    <string name="expert_mode_disable_all_done">Vse popravke so onemogočene</string>
     <string name="expert_mode_enable_all">Omogoči vse</string>
+    <string name="expert_mode_enable_all_done">Vse popravke so omogočene</string>
     <string name="expert_mode_reset_to_default">Omogoči priporočene popravke</string>
+    <string name="expert_mode_reset_to_default_done">Uporabljene priporočene popravke</string>
     <string name="expert_mode_restore_saved">Obnovi izbrano izbiro</string>
+    <string name="expert_mode_restore_saved_done">Obnovljena shranjena izbira</string>
     <string name="expert_mode_no_results">Ni najdenih popravkov</string>
     <string name="expert_mode_universal_patches">Univerzalne popravki</string>
     <string name="expert_mode_new_patches">Novo</string>
@@ -185,6 +191,7 @@ Za najboljše rezultate ta aplikacija priporoča popravljanje &lt;b&gt;polne APK
     <string name="patch_option_enter_number">Vnesi številko</string>
     <string name="patch_option_enter_decimal">Vnesi decimalno mesto</string>
     <string name="patch_option_pick_folder">Izberi mapo</string>
+    <string name="patch_option_pick_file">Izberi datoteko</string>
     <string name="patch_option_list_duplicate">Ta vrednost že obstaja</string>
     <string name="patch_option_list_empty">Vrednost ne more biti prazna</string>
     <string name="patch_option_list_empty_state">Še nobene vrednosti ni dodano</string>
@@ -263,6 +270,11 @@ Za najboljše rezultate ta aplikacija priporoča popravljanje &lt;b&gt;polne APK
     <string name="patcher_unknown_error">Prišlo je do neznane napake</string>
     <string name="patcher_conflict_title">Konflikt paketov</string>
     <string name="patcher_conflict_subtitle">Morate odstraniti obstoječo različico</string>
+    <string name="patcher_conflict_hint">Popravljena aplikacija uporablja drug certifikat kot nameščena različica. Odstranitev jo bo izbrisala vse podatke aplikacije.</string>
+    <string name="patcher_installed_conflict_title">Zahtevana je odstranitev</string>
+    <string name="patcher_installed_conflict_body">"Morphe podpisuje spremenjene aplikacije z lastnim potrdilom, ki se razlikuje od prvotnega. Android zahteva odstranitev obstoječe različice, preden je mogoče namestiti spremenjeno aplikacijo.
+
+Odstranitev bo trajno izbrisala vse podatke aplikacije."</string>
     <string name="patcher_install_error_title">Napaka pri namestitvi</string>
     <string name="patcher_install_error_subtitle">Poskusite ponovno odstraniti in namestiti</string>
     <string name="patcher_ready_to_install_subtitle">Pritisnite gumb spodaj za namestitev</string>
@@ -288,6 +300,10 @@ Za najboljše rezultate ta aplikacija priporoča popravljanje &lt;b&gt;polne APK
     <string name="patcher_step_group_saving">Shranjevanje</string>
     <string name="patcher_step_write_patched">Shranjevanje popravljene datoteke APK</string>
     <string name="patcher_step_sign_apk">Podpisovanje popravljene datoteke APK</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Zaščita pred popravljanjem v ozadju</string>
+    <string name="battery_optimization_dialog_description">Nekatere naprave lahko ustavijo popravek, ko je aplikacija minimizirana. Dovolite programu Morphe, da se izvaja brez omejitev baterije, da zagotovite zanesljivo dokončanje popravljanja.</string>
+    <string name="battery_optimization_not_now">Pozneje</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Popravki so v teku…</string>
     <string name="patcher_notification_text">Dotaknite se, da se vrnete k popravilu</string>
@@ -554,6 +570,10 @@ Dimenzije slike morajo biti naslednje:
     <string name="settings_prompt_installer_on_install">Obvestite namestitelja ob namestitvi</string>
     <string name="settings_prompt_installer_on_install_description">Pokažite dialog za izbiro polnilnika vsakič, ko namestite popravljeno aplikacijo.</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Optimizacija baterije</string>
+    <string name="settings_system_battery_optimization_description">Preprečuje sistemu, da ustavi program za popravljanje, ko je Morphe minimiziran</string>
+    <string name="settings_system_battery_optimization_excluded">Izključeno</string>
+    <string name="settings_system_battery_optimization_not_excluded">Ni izključeno</string>
     <string name="settings_system_performance">Izvedba</string>
     <string name="settings_system_process_runtime">Čas izvajanja procesa</string>
     <string name="settings_system_process_runtime_description">Izvajanje popravila v ločenem procesu za boljšo stabilnost</string>
@@ -680,6 +700,8 @@ Dimenzije slike morajo biti naslednje:
     <string name="disabled">Onemogočeno</string>
     <string name="selected">Izbrano</string>
     <string name="not_selected">Ni izbrano</string>
+    <string name="select_all">Izberi vse</string>
+    <string name="deselect_all">Odpoberi vse</string>
     <string name="rename">Preimenuj</string>
     <string name="import_">Uvozi</string>
     <string name="export">Izvozi</string>

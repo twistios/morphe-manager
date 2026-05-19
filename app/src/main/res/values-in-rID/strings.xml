@@ -65,8 +65,8 @@
     <string name="sources_management_already_exists">Sumber ini sudah ditambahkan</string>
     <string name="sources_management_invalid_url">URL sumber tidak valid. Harap periksa alamatnya dan coba lagi</string>
     <string name="sources_management_metadata_unavailable">Metadata Tidak Tersedia</string>
-    <string name="sources_management_metadata_unavailable_hint">File metadata jarak jauh tidak tersedia. Penerapan dengan bundle yang terinstal masih berfungsi, tetapi pembaruan otomatis dinonaktifkan untuk sumber ini</string>
-    <string name="sources_management_metadata_unavailable_hint_missing">Bundle patch tidak dapat diunduh. URL sumber mungkin salah atau file tidak ada</string>
+    <string name="sources_management_metadata_unavailable_hint">Berkas metadata jarak jauh tidak tersedia. Penambalan dengan bundle yang terpasang masih berfungsi, tetapi pembaruan otomatis dinonaktifkan untuk sumber ini</string>
+    <string name="sources_management_metadata_unavailable_hint_missing">Bundle tambalan tidak dapat diunduh. URL sumber mungkin salah atau berkas tidak ada</string>
     <!-- Home Screen - Sources Dialogs -->
     <string name="sources_dialog_display_name">Nama tampilan</string>
     <string name="sources_dialog_rename">Ubah nama sumber tambalan</string>
@@ -81,18 +81,18 @@
     <string name="sources_dialog_remote_url_formats_title">Contoh:</string>
     <string name="sources_dialog_local">Lokal</string>
     <string name="sources_dialog_local_file">Pilih berkas sumber tambalan</string>
-    <string name="sources_dialog_local_file_tap_hint">Ketuk untuk menjelajahi penyimpanan</string>
+    <string name="sources_dialog_local_file_tap_hint">Ketuk untuk menelusuri penyimpanan</string>
     <string name="sources_dialog_local_file_description">Pilih berkas sumber tambalan .mpp dari penyimpanan</string>
-    <string name="sources_dialog_local_invalid_extension">File harus memiliki ekstensi .mpp</string>
-    <string name="sources_dialog_url_valid">Repositori atau URL JSON yang valid</string>
-    <string name="sources_dialog_url_invalid">URL harus mengarah ke repositori GitHub/GitLab atau file .json</string>
+    <string name="sources_dialog_local_invalid_extension">Berkas harus memiliki ekstensi .mpp</string>
+    <string name="sources_dialog_url_valid">Repositori atau URL JSON yang sah</string>
+    <string name="sources_dialog_url_invalid">URL harus mengarah ke repositori GitHub/GitLab atau berkas .json</string>
     <string name="sources_dialog_local_change_file">Ganti berkas</string>
     <string name="sources_dialog_preinstalled">Sudah dipasang sebelumnya</string>
     <string name="sources_update_success">Pembaruan berhasil</string>
     <string name="sources_update_unavailable">Tidak ada pembaruan tersedia</string>
     <string name="sources_download_fail">Gagal mengunduh sumber: %s</string>
-    <string name="sources_download_fail_named">\'%s\' tidak dapat diperbarui. Periksa koneksi internet Anda dan coba lagi</string>
-    <string name="sources_download_endpoint_not_found">\'%s\': metadata patch tidak ditemukan</string>
+    <string name="sources_download_fail_named">\'%s\' tidak dapat diperbarui. Periksa sambungan internet Anda dan coba lagi</string>
+    <string name="sources_download_endpoint_not_found">\'%s\': metadata tambalan tidak ditemukan</string>
     <string name="sources_patch_expert_badge">Ahli</string>
     <string name="sources_patch_expert_badge_tooltip">Aktifkan mode Ahli di Pengaturan untuk menyertakan tambalan ini secara manual</string>
     <!-- Home Screen - Dialog 1: APK Availability -->
@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Ya, bantu saya mencari APK</string>
     <string name="home_apk_availability_no">Tidak, saya sudah memiliki APK</string>
     <string name="home_apk_use_saved_with_version">Gunakan APK yang disimpan (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Gunakan APK yang terpasang (v%s)</string>
     <string name="home_app_info_no_saved_apk">Tidak ada APK yang disimpan. Penambalan akan memerlukan memilih berkas APK lagi</string>
     <string name="home_version_requires_android">Membutuhkan Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Tidak didukung di perangkat ini</string>
@@ -122,7 +123,7 @@
     <string name="home_download_instructions_continue">Lanjutkan ke APKMirror.com</string>
     <!-- Home Screen - Dialog 3: File Picker Prompt -->
     <string name="home_file_picker_prompt_title">Pilih APK yang telah diunduh</string>
-    <string name="home_file_picker_prompt_description">Pilih berkas &lt;b&gt;%s&lt;/b&gt; APK yang baru saja Anda unduh</string>
+    <string name="home_file_picker_prompt_description">Pilih berkas APK &lt;b&gt;%s&lt;/b&gt; yang baru saja Anda unduh</string>
     <string name="home_file_picker_prompt_open_apk">Buka berkas APK</string>
     <string name="home_recommended_version">Versi rekomendasi</string>
     <string name="home_selected_version">Versi terpilih</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">Tidak dapat membaca berkas. Periksa apakah \'Penyimpanan Eksternal\' tidak dibatasi baterai</string>
     <string name="home_invalid_apk_not_an_apk">Berkas yang dipilih bukan APK yang sah</string>
     <string name="home_invalid_apk_io_error">Gagal membuka berkas. Silakan coba lagi</string>
+    <string name="home_external_apk_expert_mode_required">Fitur ini hanya tersedia dalam Mode Ahli</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Mode ahli</string>
     <string name="expert_mode_search">Cari tambalan</string>
     <string name="expert_mode_proceed">Lanjutkan ke Penambalan</string>
     <string name="expert_mode_disable_all">Nonaktifkan semua</string>
+    <string name="expert_mode_disable_all_done">Semua tambalan dinonaktifkan</string>
     <string name="expert_mode_enable_all">Aktifkan semua</string>
+    <string name="expert_mode_enable_all_done">Semua tambalan diaktifkan</string>
     <string name="expert_mode_reset_to_default">Aktifkan tambalan yang direkomendasikan</string>
+    <string name="expert_mode_reset_to_default_done">Tambalan yang direkomendasikan diterapkan</string>
     <string name="expert_mode_restore_saved">Pulihkan pemilihan yang disimpan</string>
+    <string name="expert_mode_restore_saved_done">Pemilihan yang disimpan dipulihkan</string>
     <string name="expert_mode_no_results">Tidak ada tambalan ditemukan</string>
     <string name="expert_mode_universal_patches">Tambalan universal</string>
     <string name="expert_mode_new_patches">Baru</string>
@@ -177,7 +183,7 @@ Harap bersiap untuk perilaku aplikasi yang tidak biasa atau bug yang belum terid
     <string name="home_low_disk_space_dialog_title">Ruang penyimpanan sedikit</string>
     <string name="home_low_disk_space_dialog_message">Hanya %1$.2f GB ruang penyimpanan yang tersedia. Penambalan memerlukan setidaknya %2$.2f GB ruang kosong untuk berfungsi dengan baik</string>
     <string name="home_low_disk_space_dialog_warning">Melanjutkan dapat mengakibatkan kesalahan \"berkas tidak ditemukan\" atau menghasilkan APK yang rusak</string>
-    <string name="home_simple_bundle_select_title">Pilih berkas sumber tambalan</string>
+    <string name="home_simple_bundle_select_title">Pilih sumber tambalan</string>
     <!-- Patch Options -->
     <string name="custom_color">Warna Khusus</string>
     <string name="hex_color">Warna hex</string>
@@ -186,6 +192,7 @@ Harap bersiap untuk perilaku aplikasi yang tidak biasa atau bug yang belum terid
     <string name="patch_option_enter_number">Masukkan nomor</string>
     <string name="patch_option_enter_decimal">Masukkan desimal</string>
     <string name="patch_option_pick_folder">Pilih folder</string>
+    <string name="patch_option_pick_file">Pilih berkas</string>
     <string name="patch_option_list_duplicate">Nilai ini sudah ada</string>
     <string name="patch_option_list_empty">Nilai tidak boleh kosong</string>
     <string name="patch_option_list_empty_state">Belum ada nilai yang ditambahkan</string>
@@ -264,13 +271,18 @@ Harap bersiap untuk perilaku aplikasi yang tidak biasa atau bug yang belum terid
     <string name="patcher_unknown_error">Terjadi kesalahan yang tidak diketahui</string>
     <string name="patcher_conflict_title">Paket konflik</string>
     <string name="patcher_conflict_subtitle">Anda perlu mencopot pemasangan versi yang ada</string>
+    <string name="patcher_conflict_hint">Aplikasi yang ditambal menggunakan sertifikat yang berbeda dari versi yang terpasang. Mencopot pemasangan akan menghapus semua data aplikasi</string>
+    <string name="patcher_installed_conflict_title">Diperlukan mencopot pemasangan</string>
+    <string name="patcher_installed_conflict_body">"Morphe menandatangani aplikasi yang ditambal dengan sertifikatnya sendiri, yang berbeda dari yang asli. Android mengharuskan penghapusan versi yang sudah ada sebelum aplikasi yang ditambal dapat dipasang.
+
+Mencopot pemasangannya akan menghapus semua data aplikasi secara permanen"</string>
     <string name="patcher_install_error_title">Kesalahan pemasangan</string>
     <string name="patcher_install_error_subtitle">Coba copot pemasangan dan pasang lagi</string>
     <string name="patcher_ready_to_install_subtitle">Tekan tombol di bawah untuk memasang</string>
     <string name="patcher_ready_to_mount_subtitle">Tekan tombol di bawah untuk mount</string>
     <string name="patcher_storage_permission_dialog_title">Tidak dapat mengakses jalur penyimpanan</string>
     <string name="patcher_incompatible_patcher_title">Pembaruan diperlukan</string>
-    <string name="patcher_incompatible_patcher_description">Bundle &lt;b&gt;%1$s&lt;/b&gt; memerlukan versi penambal &lt;b&gt;%2$s&lt;/b&gt; atau lebih baru. Silakan perbarui Morphe untuk menambal aplikasi ini</string>
+    <string name="patcher_incompatible_patcher_description">Bundle &lt;b&gt;%1$s&lt;/b&gt; memerlukan versi penambal &lt;b&gt;%2$s&lt;/b&gt; atau lebih baru. Silahkan perbarui Morphe untuk menambal aplikasi ini</string>
     <string name="patcher_incompatible_patcher_update_button">Unduh dan perbarui Morphe</string>
     <string name="patcher_storage_permission_description_api30">Satu atau lebih pilihan tambalan yang mengarah pada jalur Morphe tidak dapat dibaca. Beri akses penyimpanan dan ketuk tombol lalu penambalan akan dimulai secara otomatis</string>
     <string name="patcher_storage_permission_description_legacy">Satu atau lebih pilihan tambalan yang mengarah ke jalur yang tidak dapat diakses. Perbarui jalur dalam pilihan tambalan dan coba lagi</string>
@@ -289,6 +301,10 @@ Harap bersiap untuk perilaku aplikasi yang tidak biasa atau bug yang belum terid
     <string name="patcher_step_group_saving">Penyimpanan</string>
     <string name="patcher_step_write_patched">Menulis berkas APK yang ditambal</string>
     <string name="patcher_step_sign_apk">Menandatangani berkas APK yang ditambal</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Perlindungan penambalan latar belakang</string>
+    <string name="battery_optimization_dialog_description">Beberapa perangkat mungkin menghentikan proses penambal ketika aplikasi diminimalkan. Izinkan Morphe berjalan tanpa batasan penggunaan baterai agar proses penambalan dapat diselesaikan dengan lancar</string>
+    <string name="battery_optimization_not_now">Nanti saja</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Penyematan sedang berlangsung…</string>
     <string name="patcher_notification_text">Ketuk untuk kembali ke penambal</string>
@@ -555,6 +571,10 @@ Dimensi gambar harus sebagai berikut:
     <string name="settings_prompt_installer_on_install">Minta pemasang saat memasang aplikasi</string>
     <string name="settings_prompt_installer_on_install_description">Tampilkan dialog pemilihan pemasang setiap kali Anda memasang aplikasi yang ditambal</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Optimisasi baterai</string>
+    <string name="settings_system_battery_optimization_description">Mencegah sistem menghentikan penambal ketika Morphe diminimalkan</string>
+    <string name="settings_system_battery_optimization_excluded">Dikecualikan</string>
+    <string name="settings_system_battery_optimization_not_excluded">Tidak dikecualikan</string>
     <string name="settings_system_performance">Performa</string>
     <string name="settings_system_process_runtime">Proses runtime</string>
     <string name="settings_system_process_runtime_description">Jalankan penambalan di proses terpisah untuk stabilitas yang lebih baik</string>
@@ -681,6 +701,8 @@ Dimensi gambar harus sebagai berikut:
     <string name="disabled">Dinonaktifkan</string>
     <string name="selected">Dipilih</string>
     <string name="not_selected">Tidak dipilih</string>
+    <string name="select_all">Pilih semua</string>
+    <string name="deselect_all">Batal pilih semua</string>
     <string name="rename">Ganti nama</string>
     <string name="import_">Impor</string>
     <string name="export">Ekspor</string>

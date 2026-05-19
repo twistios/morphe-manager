@@ -111,6 +111,7 @@
     <string name="home_apk_availability_yes">Yes, help me find an APK</string>
     <string name="home_apk_availability_no">No, I already have an APK</string>
     <string name="home_apk_use_saved_with_version">Use saved APK (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Use installed APK (v%s)</string>
     <string name="home_app_info_no_saved_apk">No saved APK. Patching will require selecting the APK file again</string>
     <string name="home_version_requires_android">Requires Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Not supported on this device</string>
@@ -139,15 +140,20 @@
     <string name="home_invalid_apk_unreadable">Could not read the file. Check that \'External Storage\' is not battery restricted</string>
     <string name="home_invalid_apk_not_an_apk">The selected file is not a valid APK</string>
     <string name="home_invalid_apk_io_error">Failed to open the file. Please try again</string>
+    <string name="home_external_apk_expert_mode_required">This feature is only available in Expert mode</string>
 
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Expert mode</string>
     <string name="expert_mode_search">Search patches</string>
     <string name="expert_mode_proceed">Proceed to patching</string>
     <string name="expert_mode_disable_all">Disable all</string>
+    <string name="expert_mode_disable_all_done">All patches disabled</string>
     <string name="expert_mode_enable_all">Enable all</string>
+    <string name="expert_mode_enable_all_done">All patches enabled</string>
     <string name="expert_mode_reset_to_default">Enable recommended patches</string>
+    <string name="expert_mode_reset_to_default_done">Recommended patches applied</string>
     <string name="expert_mode_restore_saved">Restore saved selection</string>
+    <string name="expert_mode_restore_saved_done">Saved selection restored</string>
     <string name="expert_mode_no_results">No patches found</string>
     <string name="expert_mode_universal_patches">Universal patches</string>
     <string name="expert_mode_new_patches">New</string>
@@ -196,6 +202,7 @@ For the best results, this app recommends patching a &lt;b&gt;full APK&lt;/b&gt;
     <string name="patch_option_enter_number">Enter number</string>
     <string name="patch_option_enter_decimal">Enter decimal</string>
     <string name="patch_option_pick_folder">Pick folder</string>
+    <string name="patch_option_pick_file">Pick file</string>
     <string name="patch_option_list_duplicate">This value already exists</string>
     <string name="patch_option_list_empty">Value cannot be empty</string>
     <string name="patch_option_list_empty_state">No values added yet</string>
@@ -282,6 +289,11 @@ For the best results, this app recommends patching a &lt;b&gt;full APK&lt;/b&gt;
     <string name="patcher_unknown_error">Unknown error occurred</string>
     <string name="patcher_conflict_title">Package conflict</string>
     <string name="patcher_conflict_subtitle">You need to uninstall the existing version</string>
+    <string name="patcher_conflict_hint">The patched app uses a different certificate than the installed version. Uninstalling will erase all app data</string>
+    <string name="patcher_installed_conflict_title">Uninstall required</string>
+    <string name="patcher_installed_conflict_body">"Morphe signs patched apps with its own certificate, which differs from the original. Android requires removing the existing version before the patched app can be installed.
+
+Uninstalling will permanently erase all app data"</string>
     <string name="patcher_install_error_title">Installation error</string>
     <string name="patcher_install_error_subtitle">Try uninstalling and installing again</string>
     <string name="patcher_ready_to_install_subtitle">Press the button below to install</string>
@@ -308,6 +320,11 @@ For the best results, this app recommends patching a &lt;b&gt;full APK&lt;/b&gt;
     <string name="patcher_step_group_saving">Saving</string>
     <string name="patcher_step_write_patched">Writing patched APK file</string>
     <string name="patcher_step_sign_apk">Signing patched APK file</string>
+
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Background patching protection</string>
+    <string name="battery_optimization_dialog_description">Some devices may stop the patcher when the app is minimized. Allow Morphe to run without battery restrictions to ensure patching completes reliably</string>
+    <string name="battery_optimization_not_now">Not now</string>
 
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patching in progress…</string>
@@ -600,6 +617,10 @@ The image dimensions must be as follows:
     <string name="settings_prompt_installer_on_install_description">Show installer selection dialog each time you install a patched app</string>
 
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Battery optimization</string>
+    <string name="settings_system_battery_optimization_description">Prevents the system from stopping the patcher when Morphe is minimized</string>
+    <string name="settings_system_battery_optimization_excluded">Excluded</string>
+    <string name="settings_system_battery_optimization_not_excluded">Not excluded</string>
     <string name="settings_system_performance">Performance</string>
     <string name="settings_system_process_runtime">Process runtime</string>
     <string name="settings_system_process_runtime_description">Run patching in separate process for better stability</string>
@@ -612,40 +633,30 @@ The image dimensions must be as follows:
     <string name="settings_system_process_runtime_disabled_description">Click to configure</string>
     <string name="settings_system_process_runtime_description_not_available">This feature requires Android 11 or greater</string>
 
-    <!-- Settings - System Tab - Import and export keystore -->
+    <!-- Settings - System Tab - Import and Export Section -->
     <string name="settings_system_import_export">Import &amp; export</string>
-    <string name="settings_system_import_keystore">Import keystore</string>
-    <string name="settings_system_import_keystore_description">Import a custom keystore</string>
+    <string name="settings_system_keystore">Keystore</string>
+    <string name="settings_system_import_keystore_description">Import or export your signing keystore</string>
     <string name="settings_system_import_keystore_dialog_title">Enter keystore credentials</string>
     <string name="settings_system_import_keystore_dialog_description">You\'ll need enter the keystore\'s credentials to import it</string>
     <string name="settings_system_import_keystore_dialog_alias_field">Username (Alias)</string>
     <string name="settings_system_import_keystore_dialog_password_field">Password</string>
-    <string name="settings_system_import_keystore_dialog_button">Import</string>
     <string name="settings_system_import_keystore_dialog_format_field">Keystore format</string>
     <string name="settings_system_import_keystore_wrong_credentials">Incorrect keystore credentials</string>
     <string name="settings_system_import_keystore_success">Keystore imported</string>
     <string name="settings_system_import_keystore_failed">Failed to import keystore</string>
-    <string name="settings_system_export_keystore">Export keystore</string>
-    <string name="settings_system_export_keystore_description">Export the current keystore</string>
     <string name="settings_system_export_keystore_unavailable">No keystore available to export</string>
     <string name="settings_system_export_keystore_success">Keystore exported</string>
     <string name="settings_system_export_keystore_failed">Failed to export keystore</string>
     <string name="settings_system_show_password_field">Show password</string>
     <string name="settings_system_hide_password_field">Hide password</string>
-
-    <!-- Settings - System Tab - Import and Export Manager Settings -->
-    <string name="settings_system_import_manager_settings">Import Morphe settings</string>
-    <string name="settings_system_import_manager_settings_description">Restore Morphe settings from a JSON file</string>
+    <string name="settings_system_morphe_settings">Morphe settings</string>
+    <string name="settings_system_import_manager_settings_description">Backup and restore your Morphe settings</string>
     <string name="settings_system_import_manager_settings_fail">Failed to import Morphe settings: %s</string>
     <string name="settings_system_import_manager_settings_success">Morphe settings imported</string>
-    <string name="settings_system_export_manager_settings">Export Morphe settings</string>
-    <string name="settings_system_export_manager_settings_description">Save Morphe settings to a JSON file</string>
     <string name="settings_system_export_manager_settings_fail">Failed to export Morphe settings: %s</string>
     <string name="settings_system_export_manager_settings_success">Morphe settings exported</string>
-
-    <!-- Settings - System Tab - Debug Section -->
     <string name="settings_system_debug">Debug</string>
-    <string name="settings_system_export_debug_logs">Export debug logs</string>
     <string name="settings_system_export_debug_logs_description">Save system logs for troubleshooting</string>
     <string name="settings_system_export_debug_logs_export_read_failed">Failed to read logs (exit code %s)</string>
     <string name="settings_system_export_debug_logs_export_failed">Failed to export logs</string>
@@ -737,6 +748,8 @@ The image dimensions must be as follows:
     <string name="disabled">Disabled</string>
     <string name="selected">Selected</string>
     <string name="not_selected">Not selected</string>
+    <string name="select_all">Select all</string>
+    <string name="deselect_all">Deselect all</string>
     <string name="rename">Rename</string>
     <string name="import_">Import</string>
     <string name="export">Export</string>
@@ -757,6 +770,7 @@ The image dimensions must be as follows:
     <string name="unmount">Unmount</string>
     <string name="unmounted">Unmounted</string>
     <string name="remount">Remount</string>
+    <string name="share">Share</string>
     <string name="install">Install</string>
     <string name="installed">Installed</string>
     <string name="reinstall">Reinstall</string>

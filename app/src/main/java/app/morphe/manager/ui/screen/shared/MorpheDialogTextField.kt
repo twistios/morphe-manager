@@ -7,14 +7,12 @@ package app.morphe.manager.ui.screen.shared
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.InsertDriveFile
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.outlined.*
 import androidx.compose.material3.*
@@ -49,6 +47,7 @@ fun MorpheDialogTextField(
     isPassword: Boolean = false,
     showClearButton: Boolean = false,
     onFolderPickerClick: (() -> Unit)? = null,
+    onFilePickerClick: (() -> Unit)? = null,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
     keyboardActions: KeyboardActions = KeyboardActions.Default
 ) {
@@ -62,11 +61,17 @@ fun MorpheDialogTextField(
         placeholder = placeholder,
         leadingIcon = leadingIcon,
         trailingIcon = {
-            if (isPassword || showClearButton || onFolderPickerClick != null) {
-                Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+            if (isPassword || showClearButton || onFolderPickerClick != null || onFilePickerClick != null) {
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(4.dp),
+                    modifier = Modifier.padding(end = 4.dp)
+                ) {
                     // Password visibility toggle
                     if (isPassword) {
-                        IconButton(onClick = { passwordVisible = !passwordVisible }) {
+                        IconButton(
+                            onClick = { passwordVisible = !passwordVisible },
+                            modifier = Modifier.size(40.dp)
+                        ) {
                             Icon(
                                 imageVector = if (passwordVisible) {
                                     Icons.Outlined.VisibilityOff
@@ -85,7 +90,10 @@ fun MorpheDialogTextField(
 
                     // Clear button
                     if (showClearButton && value.isNotBlank()) {
-                        IconButton(onClick = { onValueChange("") }) {
+                        IconButton(
+                            onClick = { onValueChange("") },
+                            modifier = Modifier.size(40.dp)
+                        ) {
                             Icon(
                                 imageVector = Icons.Outlined.Clear,
                                 contentDescription = stringResource(R.string.clear),
@@ -96,10 +104,27 @@ fun MorpheDialogTextField(
 
                     // Folder picker button
                     if (onFolderPickerClick != null) {
-                        IconButton(onClick = onFolderPickerClick) {
+                        IconButton(
+                            onClick = onFolderPickerClick,
+                            modifier = Modifier.size(40.dp)
+                        ) {
                             Icon(
                                 imageVector = Icons.Outlined.FolderOpen,
                                 contentDescription = stringResource(R.string.patch_option_pick_folder),
+                                tint = textColor.copy(alpha = 0.7f)
+                            )
+                        }
+                    }
+
+                    // File picker button
+                    if (onFilePickerClick != null) {
+                        IconButton(
+                            onClick = onFilePickerClick,
+                            modifier = Modifier.size(40.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.AutoMirrored.Outlined.InsertDriveFile,
+                                contentDescription = stringResource(R.string.patch_option_pick_file),
                                 tint = textColor.copy(alpha = 0.7f)
                             )
                         }
@@ -200,11 +225,15 @@ fun MorpheDialogDropdownTextField(
             trailingIcon = {
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(4.dp),
-                    verticalAlignment = Alignment.CenterVertically
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(end = 4.dp)
                 ) {
                     // Folder picker button
                     if (onFolderPickerClick != null) {
-                        IconButton(onClick = onFolderPickerClick) {
+                        IconButton(
+                            onClick = onFolderPickerClick,
+                            modifier = Modifier.size(40.dp)
+                        ) {
                             Icon(
                                 imageVector = Icons.Outlined.FolderOpen,
                                 contentDescription = stringResource(R.string.patch_option_pick_folder),
@@ -215,7 +244,10 @@ fun MorpheDialogDropdownTextField(
 
                     // Clear button
                     if (showClearButton && value.isNotBlank()) {
-                        IconButton(onClick = { onValueChange("") }) {
+                        IconButton(
+                            onClick = { onValueChange("") },
+                            modifier = Modifier.size(40.dp)
+                        ) {
                             Icon(
                                 imageVector = Icons.Outlined.Clear,
                                 contentDescription = stringResource(R.string.clear),
@@ -225,10 +257,13 @@ fun MorpheDialogDropdownTextField(
                     }
 
                     // Dropdown arrow
-                    IconButton(onClick = {
-                        dropdownExpanded = !dropdownExpanded
-                        if (!dropdownExpanded) readOnly = true
-                    }) {
+                    IconButton(
+                        onClick = {
+                            dropdownExpanded = !dropdownExpanded
+                            if (!dropdownExpanded) readOnly = true
+                        },
+                        modifier = Modifier.size(40.dp)
+                    ) {
                         Icon(
                             imageVector = if (dropdownExpanded)
                                 Icons.Outlined.ExpandLess

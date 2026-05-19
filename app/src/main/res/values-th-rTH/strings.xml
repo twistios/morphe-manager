@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">ใช่, ช่วยฉันค้นหา APK</string>
     <string name="home_apk_availability_no">ไม่, ฉันมี APK แล้ว</string>
     <string name="home_apk_use_saved_with_version">ใช้ APK ที่ถูกบันทึก (เวอร์ชัน %s)</string>
+    <string name="home_apk_use_installed_with_version">ใช้ APK ที่ติดตั้งไว้ (v%s)</string>
     <string name="home_app_info_no_saved_apk">ไม่มี APK ที่ถูกบันทึก การแพตซ์จะต้องเลือกไฟล์ APK อีกครั้ง</string>
     <string name="home_version_requires_android">ต้องใช้ Android %s ขึ้นไป</string>
     <string name="home_apk_no_compatible_versions_title">ไม่รองรับบนอุปกรณ์นี้</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">ไม่สามารถอ่านไฟล์ได้ โปรดตรวจสอบว่า \'หน่วยความจำภายนอก\' ไม่ได้ถูกจำกัดการใช้แบตเตอรี่</string>
     <string name="home_invalid_apk_not_an_apk">ไฟล์ที่เลือกไม่ใช่ไฟล์ APK ที่ถูกต้อง</string>
     <string name="home_invalid_apk_io_error">ไม่สามารถเปิดไฟล์ได้ โปรดลองอีกครั้ง</string>
+    <string name="home_external_apk_expert_mode_required">คุณสมบัตินี้มีให้ใช้งานเฉพาะในโหมดผู้เชี่ยวชาญเท่านั้น</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">โหมดผู้เชี่ยวชาญ</string>
     <string name="expert_mode_search">ค้นหาแพตซ์</string>
     <string name="expert_mode_proceed">ดำเนินการต่อไปยังการแพตซ์</string>
     <string name="expert_mode_disable_all">ปิดการใช้งานทั้งหมด</string>
+    <string name="expert_mode_disable_all_done">ปิดการใช้งานแพตช์ทั้งหมดแล้ว</string>
     <string name="expert_mode_enable_all">เปิดการแพตซ์ทั้งหมด</string>
+    <string name="expert_mode_enable_all_done">เปิดใช้งานแพตช์ทั้งหมดแล้ว</string>
     <string name="expert_mode_reset_to_default">เปิดใช้งานแพตช์ที่แนะนำ</string>
+    <string name="expert_mode_reset_to_default_done">ใช้แพตช์ที่แนะนำแล้ว</string>
     <string name="expert_mode_restore_saved">คืนการเลือกที่บันทึกไว้</string>
+    <string name="expert_mode_restore_saved_done">การเลือกที่บันทึกไว้ได้รับการกู้คืนแล้ว</string>
     <string name="expert_mode_no_results">ไม่พบแพตซ์</string>
     <string name="expert_mode_universal_patches">แพตช์สากล</string>
     <string name="expert_mode_new_patches">ใหม่</string>
@@ -185,6 +191,7 @@
     <string name="patch_option_enter_number">ป้อนตัวเลข</string>
     <string name="patch_option_enter_decimal">ป้อนตัวเลขทศนิยม</string>
     <string name="patch_option_pick_folder">เลือกโฟลเดอร์</string>
+    <string name="patch_option_pick_file">เลือกไฟล์</string>
     <string name="patch_option_list_duplicate">ค่านี้มีอยู่แล้ว</string>
     <string name="patch_option_list_empty">ไม่สามารถเว้นว่างได้</string>
     <string name="patch_option_list_empty_state">ยังไม่ได้เพิ่มค่าใดๆ</string>
@@ -263,6 +270,11 @@
     <string name="patcher_unknown_error">เกิดข้อผิดพลาดที่ไม่รู้จัก</string>
     <string name="patcher_conflict_title">ข้อขัดแย้งของแพ็กเกจ</string>
     <string name="patcher_conflict_subtitle">คุณต้องถอนการติดตั้งเวอร์ชันที่มีอยู่ออกก่อน</string>
+    <string name="patcher_conflict_hint">แอปที่ปรับแก้แล้วใช้ใบรับรองที่แตกต่างจากเวอร์ชันที่ติดตั้ง การถอนการติดตั้งจะลบข้อมูลแอปทั้งหมด</string>
+    <string name="patcher_installed_conflict_title">ต้องถอนการติดตั้ง</string>
+    <string name="patcher_installed_conflict_body">"Morphe ลงนามแอปที่แพตช์ด้วยใบรับรองของตัวเอง ซึ่งแตกต่างจากใบรับรองเดิม Android กำหนดให้ถอนการติดตั้งแอปเวอร์ชันเดิมก่อนจึงจะสามารถติดตั้งแอปที่แพตช์แล้วได้
+
+การถอนการติดตั้งจะลบข้อมูลแอปทั้งหมดอย่างถาวร"</string>
     <string name="patcher_install_error_title">ข้อผิดพลาดในการติดตั้ง</string>
     <string name="patcher_install_error_subtitle">ลองถอนการติดตั้งแล้วติดตั้งใหม่อีกครั้ง</string>
     <string name="patcher_ready_to_install_subtitle">กดปุ่มด้านล่างเพื่อติดตั้ง</string>
@@ -288,6 +300,10 @@
     <string name="patcher_step_group_saving">กำลังบันทึก</string>
     <string name="patcher_step_write_patched">กำลังเขียนไฟล์ APK ที่ได้รับการแพตช์</string>
     <string name="patcher_step_sign_apk">กำลังลงนามไฟล์ APK ที่ได้รับการแพตช์</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">การป้องกันการปรับแก้เบื้องหลัง</string>
+    <string name="battery_optimization_dialog_description">อุปกรณ์บางเครื่องอาจหยุดโปรแกรมปรับแก้เมื่อแอปพลิเคชันถูกลดขนาด อนุญาตให้ Morphe ทำงานโดยไม่มีข้อจำกัดด้านแบตเตอรี่เพื่อให้แน่ใจว่าการปรับแก้เสร็จสมบูรณ์ได้อย่างน่าเชื่อถือ</string>
+    <string name="battery_optimization_not_now">ไม่ตอนนี้</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">กำลังดำเนินการแพตช์…</string>
     <string name="patcher_notification_text">แตะเพื่อกลับไปยัง Patcher</string>
@@ -554,6 +570,10 @@ morphe_header_custom_dark.png
     <string name="settings_prompt_installer_on_install">แสดงตัวเลือกตัวติดตั้งในการติดตั้ง</string>
     <string name="settings_prompt_installer_on_install_description">แสดงกล่องโต้ตอบตัวเลือกตัวติดตั้งทุกครั้งที่คุณติดตั้งแอปปรับแก้</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">การเพิ่มประสิทธิภาพแบตเตอรี่</string>
+    <string name="settings_system_battery_optimization_description">ป้องกันไม่ให้ระบบหยุดการทำงานของ patcher เมื่อ Morphe ถูกลดขนาดหน้าต่าง</string>
+    <string name="settings_system_battery_optimization_excluded">ยกเว้น</string>
+    <string name="settings_system_battery_optimization_not_excluded">ไม่ได้ยกเว้น</string>
     <string name="settings_system_performance">การตั้งค่า</string>
     <string name="settings_system_process_runtime">การทำงานของโปรเซส</string>
     <string name="settings_system_process_runtime_description">ทำให้การนำพัท์ในโปรเซสแยกกต่างสำหรับ</string>
@@ -681,6 +701,8 @@ morphe_header_custom_dark.png
     <string name="disabled">ปิดการใช้งานอยู่</string>
     <string name="selected">รีมอน</string>
     <string name="not_selected">ติดตั้ง</string>
+    <string name="select_all">เลือกทั้งหมด</string>
+    <string name="deselect_all">ยกเลิกการเลือกทั้งหมด</string>
     <string name="rename">เปลี่ยนชื่อ</string>
     <string name="import_">นำเข้า</string>
     <string name="export">ส่งออก</string>

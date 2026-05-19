@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">はい、 APK を探すのを手伝ってください</string>
     <string name="home_apk_availability_no">いいえ、既に APK を持っています</string>
     <string name="home_apk_use_saved_with_version">保存済みの APK (v%s) を使用する</string>
+    <string name="home_apk_use_installed_with_version">インストール済みの APK (v%s) を使用する</string>
     <string name="home_app_info_no_saved_apk">保存済みの APK がありません。パッチを適用するには、 APK ファイルを再度選択してください</string>
     <string name="home_version_requires_android">Android %s 以降が必要です</string>
     <string name="home_apk_no_compatible_versions_title">このデバイスではサポートされていません</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">ファイルを読み込めませんでした。「外部ストレージ」がバッテリー制限の対象になっていないか確認してください</string>
     <string name="home_invalid_apk_not_an_apk">選択されたファイルは有効な APK ではありません</string>
     <string name="home_invalid_apk_io_error">ファイルを開けませんでした。もう一度お試しください</string>
+    <string name="home_external_apk_expert_mode_required">この機能は、エキスパートモードでのみ利用可能です</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">エキスパートモード</string>
     <string name="expert_mode_search">パッチを検索</string>
     <string name="expert_mode_proceed">パッチ処理に進む</string>
     <string name="expert_mode_disable_all">全て無効化</string>
+    <string name="expert_mode_disable_all_done">すべてのパッチが無効になりました</string>
     <string name="expert_mode_enable_all">全て有効化</string>
+    <string name="expert_mode_enable_all_done">すべてのパッチが有効になりました</string>
     <string name="expert_mode_reset_to_default">推奨パッチの有効化</string>
+    <string name="expert_mode_reset_to_default_done">推奨パッチが適用されました</string>
     <string name="expert_mode_restore_saved">保存済みのパッチセレクションの復元</string>
+    <string name="expert_mode_restore_saved_done">保存された選択が復元されました</string>
     <string name="expert_mode_no_results">パッチが見つかりません</string>
     <string name="expert_mode_universal_patches">ユニバーサルパッチ</string>
     <string name="expert_mode_new_patches">新規</string>
@@ -185,6 +191,7 @@
     <string name="patch_option_enter_number">数値を入力してください</string>
     <string name="patch_option_enter_decimal">小数点を入力してください</string>
     <string name="patch_option_pick_folder">フォルダーを選択する</string>
+    <string name="patch_option_pick_file">ファイルを選択</string>
     <string name="patch_option_list_duplicate">この値はすでに存在します</string>
     <string name="patch_option_list_empty">値は空にできません</string>
     <string name="patch_option_list_empty_state">まだ値が追加されていません</string>
@@ -263,6 +270,11 @@
     <string name="patcher_unknown_error">不明なエラーが発生しました</string>
     <string name="patcher_conflict_title">パッケージの競合</string>
     <string name="patcher_conflict_subtitle">既存のバージョンをアンインストールする必要があります</string>
+    <string name="patcher_conflict_hint">パッチを適用したアプリは、インストールされているバージョンとは異なる証明書を使用しています。アンインストールすると、すべてのアプリデータが消去されます</string>
+    <string name="patcher_installed_conflict_title">アンインストールが必要です</string>
+    <string name="patcher_installed_conflict_body">"Morpheは、パッチされたアプリを元のものとは異なる独自の証明書で署名します。Androidでは、パッチされたアプリをインストールする前に、既存のバージョンを削除する必要があります。
+
+アンインストールすると、アプリのデータがすべて完全に消去されます。"</string>
     <string name="patcher_install_error_title">インストールエラー</string>
     <string name="patcher_install_error_subtitle">一度アンインストールしてから、再度インストールしてください</string>
     <string name="patcher_ready_to_install_subtitle">インストールするには以下のボタンを押してください</string>
@@ -288,6 +300,10 @@
     <string name="patcher_step_group_saving">保存中</string>
     <string name="patcher_step_write_patched">パッチ済み APK ファイルを出力中</string>
     <string name="patcher_step_sign_apk">パッチ済み APK ファイルに署名中</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">バックグラウンドパッチ保護</string>
+    <string name="battery_optimization_dialog_description">アプリが最小化された場合に、一部のデバイスでパッチャーが停止することがあります。Morpheが確実パッチを完了できるように、バッテリー制限なしで実行できるようにしてください。</string>
+    <string name="battery_optimization_not_now">後で</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">パッチ適用中…</string>
     <string name="patcher_notification_text">パッチ適用プログラムに戻るにはタップ</string>
@@ -554,6 +570,10 @@ morphe_header_custom_dark.png
     <string name="settings_prompt_installer_on_install">インストール時にインストーラーを選択</string>
     <string name="settings_prompt_installer_on_install_description">パッチ適用済みアプリをインストールする際に、毎回インストーラー選択ダイアログを表示します</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">電池の最適化</string>
+    <string name="settings_system_battery_optimization_description">Morpheが最小化されたときに、システムがパッチャーを停止しないようにします</string>
+    <string name="settings_system_battery_optimization_excluded">除外</string>
+    <string name="settings_system_battery_optimization_not_excluded">除外されていません</string>
     <string name="settings_system_performance">パフォーマンス</string>
     <string name="settings_system_process_runtime">別プロセスで実行</string>
     <string name="settings_system_process_runtime_description">安定性を向上させるために、パッチ処理を別プロセスで実行します</string>
@@ -680,6 +700,8 @@ morphe_header_custom_dark.png
     <string name="disabled">無効</string>
     <string name="selected">選択中</string>
     <string name="not_selected">選択されていません</string>
+    <string name="select_all">すべて選択</string>
+    <string name="deselect_all">すべて選択解除</string>
     <string name="rename">名前を変更する</string>
     <string name="import_">インポート</string>
     <string name="export">エクスポート</string>

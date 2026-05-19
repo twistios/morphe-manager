@@ -39,6 +39,7 @@
     <!-- Home Screen - Root Mode -->
     <!-- Patcher Screen -->
     <!-- Patcher Screen - Patcher Steps -->
+    <!-- Battery optimization pre-flight dialog -->
     <!-- Patcher Screen - Patcher Worker -->
     <!-- Patcher Screen - Patcher Messages -->
     <string name="patcher_message_4">Verdama skaitmeninė magija… ☕</string>

@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">हाँ, मुझे APK ढूंढने में मदद करें</string>
     <string name="home_apk_availability_no">नहीं, मेरे पास पहले से ही एक एपीके है</string>
     <string name="home_apk_use_saved_with_version">प्रतिलिपि APK (v%s) का उपयोग करें</string>
+    <string name="home_apk_use_installed_with_version">इंस्टॉल किए गए APK (v%s) का उपयोग करें</string>
     <string name="home_app_info_no_saved_apk">कोई प्रतिलिपि APK नहीं है। पट्च करना पुनः APK फ़ाइल का चयन करना आवश्यक होगा</string>
     <string name="home_version_requires_android">Android %s+ की आवश्यकता है</string>
     <string name="home_apk_no_compatible_versions_title">इस डिवाइस पर समर्थित नहीं है</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">फ़ाइल पढ़ने में असमर्थ। जाँच करें कि \'External Storage\' बैटरी द्वारा प्रतिबंधित तो नहीं है</string>
     <string name="home_invalid_apk_not_an_apk">चयनित फ़ाइल एक वैध APK नहीं है</string>
     <string name="home_invalid_apk_io_error">फ़ाइल खोलने में विफल। कृपया फिर से प्रयास करें</string>
+    <string name="home_external_apk_expert_mode_required">यह सुविधा केवल विशेषज्ञ मोड में उपलब्ध है</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">एक्सपर्ट मोड</string>
     <string name="expert_mode_search">पैच खोजें</string>
     <string name="expert_mode_proceed">पैचिंग के लिए आगे बढ़ें</string>
     <string name="expert_mode_disable_all">सभी को असक्षम करें</string>
+    <string name="expert_mode_disable_all_done">सभी पैच अक्षम किए गए</string>
     <string name="expert_mode_enable_all">सभी को सक्षम करें</string>
+    <string name="expert_mode_enable_all_done">सभी पैच सक्षम किए गए</string>
     <string name="expert_mode_reset_to_default">अनुशंसित पैच सक्षम करें</string>
+    <string name="expert_mode_reset_to_default_done">अनुशंसित पैच लागू किए गए</string>
     <string name="expert_mode_restore_saved">चयन पुनर्स्थापित करें</string>
+    <string name="expert_mode_restore_saved_done">सहेजे गए चयन को पुनर्स्थापित किया गया</string>
     <string name="expert_mode_no_results">कोई पैच नहीं मिला</string>
     <string name="expert_mode_universal_patches">सार्वभौमिक पैच</string>
     <string name="expert_mode_new_patches">नया</string>
@@ -185,6 +191,7 @@
     <string name="patch_option_enter_number">नंबर दर्ज करें</string>
     <string name="patch_option_enter_decimal">दशमलव दर्ज करें</string>
     <string name="patch_option_pick_folder">फ़ोल्डर चुनें</string>
+    <string name="patch_option_pick_file">फ़ाइल चुनें</string>
     <string name="patch_option_list_duplicate">यह मान पहले से मौजूद है</string>
     <string name="patch_option_list_empty">मान खाली नहीं हो सकता</string>
     <string name="patch_option_list_empty_state">अभी तक कोई मान नहीं जोड़ा गया है</string>
@@ -263,6 +270,11 @@
     <string name="patcher_unknown_error">Unknown error occurred</string>
     <string name="patcher_conflict_title">Package conflict</string>
     <string name="patcher_conflict_subtitle">You need to uninstall the existing version</string>
+    <string name="patcher_conflict_hint">पैच किया गया ऐप इंस्टॉल किए गए संस्करण से अलग प्रमाणपत्र का उपयोग करता है। अनइंस्टॉल करने से सभी ऐप डेटा मिट जाएगा।</string>
+    <string name="patcher_installed_conflict_title">अनइंस्टॉल आवश्यक है</string>
+    <string name="patcher_installed_conflict_body">"Morphe अपने स्वयं के प्रमाणपत्र के साथ पैच्ड ऐप्स पर हस्ताक्षर करता है, जो मूल से अलग है। Android को पैच्ड ऐप को इंस्टॉल करने से पहले मौजूदा संस्करण को हटाने की आवश्यकता होती है।
+
+अनइंस्टॉल करने से सभी ऐप डेटा स्थायी रूप से मिट जाएगा।"</string>
     <string name="patcher_install_error_title">Installation error</string>
     <string name="patcher_install_error_subtitle">Try uninstalling and installing again</string>
     <string name="patcher_ready_to_install_subtitle">Press the button below to install</string>
@@ -288,6 +300,10 @@
     <string name="patcher_step_group_saving">सेव हो रहा है</string>
     <string name="patcher_step_write_patched">पैच्ड एपीके फाइल लिखना</string>
     <string name="patcher_step_sign_apk">Signing patched APK file</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">पृष्ठभूमि पैचिंग सुरक्षा</string>
+    <string name="battery_optimization_dialog_description">कुछ डिवाइस ऐप को मिनिमाइज किए जाने पर पैचर को रोक सकते हैं। पैचिंग को विश्वसनीय रूप से पूरा करने के लिए मोर्फ़ को बैटरी प्रतिबंधों के बिना चलाने की अनुमति दें।</string>
+    <string name="battery_optimization_not_now">अभी नहीं</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Patching in progress…</string>
     <string name="patcher_notification_text">Tap to return to the patcher</string>
@@ -554,6 +570,10 @@ morphe_header_custom_dark.png
     <string name="settings_prompt_installer_on_install">इंस्टॉल पर इंस्टॉलर प्रदर्शित करें</string>
     <string name="settings_prompt_installer_on_install_description">हर बार जब आप पैच्ड ऐप इंस्टॉल करते हैं, तो ऐप को इंस्टॉल करने के लिए इंस्टॉलर चयन डायलॉग दिखाएं</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">बैटरी अनुकूलन</string>
+    <string name="settings_system_battery_optimization_description">Morphe को छोटा किए जाने पर पैचर को रोकने से सिस्टम को रोकता है</string>
+    <string name="settings_system_battery_optimization_excluded">बहिष्कृत</string>
+    <string name="settings_system_battery_optimization_not_excluded">बहिष्कृत नहीं</string>
     <string name="settings_system_performance">प्रदर्शन</string>
     <string name="settings_system_process_runtime">प्रोसेस रनटाइम</string>
     <string name="settings_system_process_runtime_description">बेटर स्टेबिलिटी के लिए पैचिंग को अलग से प्रोसेस में चलाएं</string>
@@ -680,6 +700,8 @@ morphe_header_custom_dark.png
     <string name="disabled">असक्षम</string>
     <string name="selected">चयनित</string>
     <string name="not_selected">चयनित नहीं</string>
+    <string name="select_all">सब चुनें</string>
+    <string name="deselect_all">सभी का चयन रद्द करें</string>
     <string name="rename">रename</string>
     <string name="import_">आयात करें</string>
     <string name="export">निर्यात करें</string>

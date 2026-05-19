@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">네, APK를 찾는데 도움을 주세요</string>
     <string name="home_apk_availability_no">아니요, 이미 APK를 가지고 있습니다</string>
     <string name="home_apk_use_saved_with_version">저장된 APK 사용 (v%s)</string>
+    <string name="home_apk_use_installed_with_version">설치된 APK 사용 (v%s)</string>
     <string name="home_app_info_no_saved_apk">저장된 APK가 없습니다. 패치하려면 APK 파일을 다시 선택하세요</string>
     <string name="home_version_requires_android">Android %s+ 필요</string>
     <string name="home_apk_no_compatible_versions_title">이 기기에서는 지원되지 않음</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">파일을 읽을 수 없습니다. \'외부 저장소\'가 배터리 제한되어 있는지 확인하세요</string>
     <string name="home_invalid_apk_not_an_apk">선택된 파일이 유효한 APK가 아닙니다</string>
     <string name="home_invalid_apk_io_error">파일을 열 수 없습니다. 다시 시도하세요</string>
+    <string name="home_external_apk_expert_mode_required">이 기능은 전문가 모드에서만 사용할 수 있습니다.</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">전문가 모드</string>
     <string name="expert_mode_search">패치 검색</string>
     <string name="expert_mode_proceed">패치 진행</string>
     <string name="expert_mode_disable_all">모두 비활성화하였습니다</string>
+    <string name="expert_mode_disable_all_done">모든 패치를 비활성화하였습니다</string>
     <string name="expert_mode_enable_all">모두 활성화하였습니다</string>
+    <string name="expert_mode_enable_all_done">모든 패치를 활성화하였습니다</string>
     <string name="expert_mode_reset_to_default">패치 기본값으로 초기화하였습니다</string>
+    <string name="expert_mode_reset_to_default_done">권장 패치를 적용하였습니다</string>
     <string name="expert_mode_restore_saved">저장된 선택 목록으로 복원하였습니다</string>
+    <string name="expert_mode_restore_saved_done">저장된 선택 목록을 복원하였습니다</string>
     <string name="expert_mode_no_results">패치를 찾을 수 없습니다</string>
     <string name="expert_mode_universal_patches">유니버셜 패치</string>
     <string name="expert_mode_new_patches">신규</string>
@@ -185,6 +191,7 @@
     <string name="patch_option_enter_number">숫자 입력</string>
     <string name="patch_option_enter_decimal">소수점 입력</string>
     <string name="patch_option_pick_folder">폴더 선택</string>
+    <string name="patch_option_pick_file">파일 선택</string>
     <string name="patch_option_list_duplicate">이 값은 이미 존재합니다</string>
     <string name="patch_option_list_empty">값을 비워 둘 수 없습니다</string>
     <string name="patch_option_list_empty_state">아직 값이 추가되지 않았습니다</string>
@@ -263,6 +270,11 @@
     <string name="patcher_unknown_error">알 수 없는 오류가 발생하였습니다</string>
     <string name="patcher_conflict_title">패키지 충돌</string>
     <string name="patcher_conflict_subtitle">기존 버전을 제거해야 합니다</string>
+    <string name="patcher_conflict_hint">패치된 앱은 설치된 버전과 다른 인증서를 사용합니다. 제거하면 앱 데이터가 모두 삭제됩니다</string>
+    <string name="patcher_installed_conflict_title">제거가 필요합니다</string>
+    <string name="patcher_installed_conflict_body">"Morphe는 자체 인증서로 패치된 앱에 서명하므로 원본 앱과 인증서가 다릅니다. Android에서는 기존 버전을 제거해야 패치된 앱을 설치할 수 있습니다.
+
+앱을 제거하면 모든 앱 데이터가 영구적으로 삭제됩니다"</string>
     <string name="patcher_install_error_title">설치 오류</string>
     <string name="patcher_install_error_subtitle">앱을 제거한 후에 다시 설치하세요</string>
     <string name="patcher_ready_to_install_subtitle">설치하시려면 아래 버튼을 탭하세요</string>
@@ -288,6 +300,10 @@
     <string name="patcher_step_group_saving">저장하는 중</string>
     <string name="patcher_step_write_patched">패치된 APK 파일을 작성하는 중</string>
     <string name="patcher_step_sign_apk">패치된 APK 파일에 서명하는 중</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">백그라운드 패치 보호</string>
+    <string name="battery_optimization_dialog_description">일부 기기에서는 앱이 최소화되면 패처가 중지될 수 있습니다. 패치가 안정적으로 완료되도록 Morphe가 배터리 제한 없이 실행되도록 허용하세요</string>
+    <string name="battery_optimization_not_now">나중에</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">패치를 진행하는 중…</string>
     <string name="patcher_notification_text">패처로 돌아가려면 여기를 탭하세요</string>
@@ -437,7 +453,7 @@
     <!-- Settings - Advanced Tab - GitHub PAT Settings -->
     <string name="settings_advanced_github_pat">GitHub 개인 액세스 토큰</string>
     <string name="settings_advanced_github_pat_description">풀 리퀘스트 소스에 필요합니다</string>
-    <string name="settings_advanced_github_pat_configured">토큰을 구성하였습니다</string>
+    <string name="settings_advanced_github_pat_configured">토큰을 설정하였습니다</string>
     <string name="settings_advanced_github_pat_how_to_get">토큰 얻는 방법</string>
     <string name="settings_advanced_github_pat_dialog_title">GitHub 개인 액세스 토큰 설정</string>
     <string name="settings_advanced_github_pat_dialog_description">풀 리퀘스트를 외부 소스로 사용하기 위해 GitHub 개인 액세스 토큰이 필요합니다.
@@ -555,6 +571,10 @@ morphe_header_custom_dark.png
     <string name="settings_prompt_installer_on_install">설치 시 설치 프로그램 안내</string>
     <string name="settings_prompt_installer_on_install_description">패치된 앱을 설치할 때마다 설치 프로그램 선택 다이얼로그를 표시합니다</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">배터리 최적화</string>
+    <string name="settings_system_battery_optimization_description">Morphe가 최소화되었을 경우에 패처가 중지되지 않도록 시스템을 방지합니다</string>
+    <string name="settings_system_battery_optimization_excluded">제외됨</string>
+    <string name="settings_system_battery_optimization_not_excluded">제외되지 않음</string>
     <string name="settings_system_performance">성능</string>
     <string name="settings_system_process_runtime">프로세스 런타임</string>
     <string name="settings_system_process_runtime_description">안정성 향상을 위해 패치를 별도의 프로세스에서 실행합니다</string>
@@ -681,6 +701,8 @@ morphe_header_custom_dark.png
     <string name="disabled">비활성화됨</string>
     <string name="selected">선택됨</string>
     <string name="not_selected">선택 안 함</string>
+    <string name="select_all">모두 선택</string>
+    <string name="deselect_all">모두 선택 해제</string>
     <string name="rename">이름 변경</string>
     <string name="import_">가져오기</string>
     <string name="export">내보내기</string>

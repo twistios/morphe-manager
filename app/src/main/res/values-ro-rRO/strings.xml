@@ -105,6 +105,7 @@
     <string name="home_apk_availability_yes">Da, ajută-mă să găsesc un APK</string>
     <string name="home_apk_availability_no">Nu, am deja un APK</string>
     <string name="home_apk_use_saved_with_version">Folosește APK salvat (v%s)</string>
+    <string name="home_apk_use_installed_with_version">Utilizați APK instalat (v%s)</string>
     <string name="home_app_info_no_saved_apk">Niciun APK salvat. Patch-uirea necesită selectarea APK-ului din nou</string>
     <string name="home_version_requires_android">Necesită Android %s+</string>
     <string name="home_apk_no_compatible_versions_title">Nu este suportat pe acest dispozitiv</string>
@@ -131,14 +132,19 @@
     <string name="home_invalid_apk_unreadable">Nu s-a putut citi fișierul. Verificați dacă \'Stocare Externă\' nu este restricționată de baterie</string>
     <string name="home_invalid_apk_not_an_apk">Fișierul selectat nu este un APK valid</string>
     <string name="home_invalid_apk_io_error">Nu s-a putut deschide fișierul. Vă rugăm încercați din nou</string>
+    <string name="home_external_apk_expert_mode_required">Această funcție este disponibilă doar în modul Expert</string>
     <!-- Home Screen - Dialog 4: Expert Mode Dialog -->
     <string name="expert_mode_title">Mod expert</string>
     <string name="expert_mode_search">Caută patch-uri</string>
     <string name="expert_mode_proceed">Treci la patch-uire</string>
     <string name="expert_mode_disable_all">Dezactivează toate</string>
+    <string name="expert_mode_disable_all_done">Toate patch-urile dezactivate</string>
     <string name="expert_mode_enable_all">Activează toate</string>
+    <string name="expert_mode_enable_all_done">Toate patch-urile activate</string>
     <string name="expert_mode_reset_to_default">Activează patch-urile recomandate</string>
+    <string name="expert_mode_reset_to_default_done">Patch-urile recomandate au fost aplicate</string>
     <string name="expert_mode_restore_saved">Restaurarea selecției salvate</string>
+    <string name="expert_mode_restore_saved_done">Selecția salvată a fost restabilită</string>
     <string name="expert_mode_no_results">Nu au fost găsite patch-uri</string>
     <string name="expert_mode_universal_patches">Patch-uri universale</string>
     <string name="expert_mode_new_patches">Nou</string>
@@ -185,6 +191,7 @@ Pentru cele mai bune rezultate, această aplicație recomandă patch-uirea unui 
     <string name="patch_option_enter_number">Introduceți numărul</string>
     <string name="patch_option_enter_decimal">Introduceți decimal</string>
     <string name="patch_option_pick_folder">Alege folder</string>
+    <string name="patch_option_pick_file">Alege fișier</string>
     <string name="patch_option_list_duplicate">Această valoare există deja</string>
     <string name="patch_option_list_empty">Valoarea nu poate fi goală</string>
     <string name="patch_option_list_empty_state">Nu au fost adăugate valori încă</string>
@@ -263,6 +270,11 @@ Pentru cele mai bune rezultate, această aplicație recomandă patch-uirea unui 
     <string name="patcher_unknown_error">A apărut o eroare necunoscută</string>
     <string name="patcher_conflict_title">Conflict de pachet</string>
     <string name="patcher_conflict_subtitle">Trebuie să dezinstalați versiunea existentă</string>
+    <string name="patcher_conflict_hint">Aplicația modificată utilizează un certificat diferit față de versiunea instalată. Dezinstalarea va șterge toate datele aplicației.</string>
+    <string name="patcher_installed_conflict_title">Dezinstalare necesară</string>
+    <string name="patcher_installed_conflict_body">"Morphe semnează aplicațiile modificate cu propriul certificat, care diferă de cel original. Android necesită eliminarea versiunii existente înainte ca aplicația modificată să poată fi instalată.
+
+Dezinstalarea va șterge definitiv toate datele aplicației."</string>
     <string name="patcher_install_error_title">Eroare la instalare</string>
     <string name="patcher_install_error_subtitle">Încearcă să dezinstalezi și să instalezi din nou</string>
     <string name="patcher_ready_to_install_subtitle">Apasă butonul de mai jos pentru instalare</string>
@@ -288,6 +300,10 @@ Pentru cele mai bune rezultate, această aplicație recomandă patch-uirea unui 
     <string name="patcher_step_group_saving">Se salvează</string>
     <string name="patcher_step_write_patched">Se scrie fișierul APK modificat</string>
     <string name="patcher_step_sign_apk">Se semnează fișierul APK modificat</string>
+    <!-- Battery optimization pre-flight dialog -->
+    <string name="battery_optimization_dialog_title">Protecție la patch-uri în fundal</string>
+    <string name="battery_optimization_dialog_description">Unele dispozitive pot opri patcher-ul când aplicația este minimizată. Permiteți aplicației Morphe să ruleze fără restricții de baterie pentru a asigura finalizarea fiabilă a patch-urilor</string>
+    <string name="battery_optimization_not_now">Nu acum</string>
     <!-- Patcher Screen - Patcher Worker -->
     <string name="patcher_notification_title">Se aplică modificările…</string>
     <string name="patcher_notification_text">Atinge pentru a reveni la patcher</string>
@@ -554,6 +570,10 @@ Dimensiunile imaginilor trebuie să fie următoarele:
     <string name="settings_prompt_installer_on_install">Prompt instalator la instalare</string>
     <string name="settings_prompt_installer_on_install_description">Afișează dialogul de selecție a instalatorului fiecare dată când instalați o aplicație patată</string>
     <!-- Settings - System Tab - Performance Section -->
+    <string name="settings_system_battery_optimization">Optimizarea bateriei</string>
+    <string name="settings_system_battery_optimization_description">Împiedică sistemul să oprească patcher-ul când Morphe este minimizat</string>
+    <string name="settings_system_battery_optimization_excluded">Exclus</string>
+    <string name="settings_system_battery_optimization_not_excluded">Nu este exclus</string>
     <string name="settings_system_performance">Performanță</string>
     <string name="settings_system_process_runtime">Runtime proces</string>
     <string name="settings_system_process_runtime_description">Rulează patch-uirea în proces separat pentru o stabilitate mai bună</string>
@@ -680,6 +700,8 @@ Dimensiunile imaginilor trebuie să fie următoarele:
     <string name="disabled">Dezactivat</string>
     <string name="selected">Selectat</string>
     <string name="not_selected">Neselectat</string>
+    <string name="select_all">Selectează tot</string>
+    <string name="deselect_all">Deselecteazã totul</string>
     <string name="rename">Redenumește</string>
     <string name="import_">Importă</string>
     <string name="export">Exportă</string>
