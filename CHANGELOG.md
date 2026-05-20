@@ -1,3 +1,27 @@
+# [1.18.0-dev.9](https://github.com/MorpheApp/morphe-manager/compare/v1.18.0-dev.8...v1.18.0-dev.9) (2026-05-20)
+
+
+### Features
+
+* Add toast feedback and tooltips to `MultiSelectBar` pill buttons ([fee8095](https://github.com/MorpheApp/morphe-manager/commit/fee8095098006baf327d31f0e995baf303eded3b))
+* Add toast feedback and tooltips to `SourceManagementSheet` pill buttons ([db2dd71](https://github.com/MorpheApp/morphe-manager/commit/db2dd71ffb433fda66c3cdaffb749c01ef618754))
+* Add tooltips to `ActionPillButton`s in APK and patch selection dialogs ([8dd77b4](https://github.com/MorpheApp/morphe-manager/commit/8dd77b4ddf4afd11bd9d755a3478841e7cb18508))
+* Scope drag handle to `BundleCardHeader` to prevent tooltip conflict ([2b34281](https://github.com/MorpheApp/morphe-manager/commit/2b34281c8f3faf655bbc1562be411cd60a087ac3))
+
+# [1.18.0-dev.8](https://github.com/MorpheApp/morphe-manager/compare/v1.18.0-dev.7...v1.18.0-dev.8) (2026-05-20)
+
+
+### Bug Fixes
+
+* Eliminate `AnimatedVisibility` layout jumps by moving spacing inside animated content ([e5f5115](https://github.com/MorpheApp/morphe-manager/commit/e5f51156fa4a079e5a2c6e28e8c40b08ea5514a2))
+
+
+### Features
+
+* Add share, export, and install action buttons to APK management dialog ([0f51573](https://github.com/MorpheApp/morphe-manager/commit/0f5157382886cf27595240484d3579a7a0ff61f0))
+* Consolidate import/export settings into grouped rows ([7bea066](https://github.com/MorpheApp/morphe-manager/commit/7bea0665191a6c6b5f24934e073143d2dd741ff4))
+* Polish settings screens UI ([3d5b4ca](https://github.com/MorpheApp/morphe-manager/commit/3d5b4ca3ed94afca7bafa9111a3314b61cb9fe34))
+
 # [1.18.0-dev.7](https://github.com/MorpheApp/morphe-manager/compare/v1.18.0-dev.6...v1.18.0-dev.7) (2026-05-19)
 
 

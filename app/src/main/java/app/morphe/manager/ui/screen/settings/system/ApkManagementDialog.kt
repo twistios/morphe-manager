@@ -15,7 +15,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.*
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -419,7 +418,7 @@ private fun ApkManagementDialogContent(
     ) {
         LazyColumn(
             modifier = Modifier.fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
+            verticalArrangement = Arrangement.spacedBy(MorpheDefaults.ItemSpacing)
         ) {
             // Summary box
             item(key = "summary") {
@@ -474,8 +473,8 @@ private fun ApkItemCard(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 12.dp, vertical = 12.dp),
-                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    .padding(horizontal = MorpheDefaults.ItemSpacing, vertical = MorpheDefaults.ItemSpacing),
+                horizontalArrangement = Arrangement.spacedBy(MorpheDefaults.ItemSpacing),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 // App icon
@@ -513,10 +512,7 @@ private fun ApkItemCard(
                 }
             }
 
-            HorizontalDivider(
-                modifier = Modifier.padding(horizontal = 12.dp),
-                color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
-            )
+            MorpheSettingsDivider()
 
             // Action buttons
             FlowRow(
@@ -527,34 +523,42 @@ private fun ApkItemCard(
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 if (onShare != null) {
+                    val shareLabel = stringResource(R.string.share)
                     ActionPillButton(
                         onClick = onShare,
                         icon = Icons.Outlined.Share,
-                        contentDescription = stringResource(R.string.share)
+                        contentDescription = shareLabel,
+                        tooltip = shareLabel
                     )
                 }
 
                 if (onExport != null) {
+                    val exportLabel = stringResource(R.string.export)
                     ActionPillButton(
                         onClick = onExport,
                         icon = Icons.Outlined.Upload,
-                        contentDescription = stringResource(R.string.export)
+                        contentDescription = exportLabel,
+                        tooltip = exportLabel
                     )
                 }
 
                 if (onInstall != null) {
                     val isMountType = data.installType == InstallType.MOUNT
+                    val installLabel = stringResource(if (isMountType) R.string.mount else R.string.install)
                     ActionPillButton(
                         onClick = onInstall,
                         icon = if (isMountType) Icons.Outlined.Link else Icons.Outlined.InstallMobile,
-                        contentDescription = stringResource(if (isMountType) R.string.mount else R.string.install)
+                        contentDescription = installLabel,
+                        tooltip = installLabel
                     )
                 }
 
+                val deleteLabel = stringResource(R.string.delete)
                 ActionPillButton(
                     onClick = onDelete,
                     icon = Icons.Outlined.Delete,
-                    contentDescription = stringResource(R.string.delete),
+                    contentDescription = deleteLabel,
+                    tooltip = deleteLabel,
                     colors = IconButtonDefaults.filledTonalIconButtonColors(
                         containerColor = MaterialTheme.colorScheme.errorContainer,
                         contentColor = MaterialTheme.colorScheme.onErrorContainer
