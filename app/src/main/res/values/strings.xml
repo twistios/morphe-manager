@@ -586,6 +586,11 @@ The image dimensions must be as follows:
     <string name="settings_advanced_patch_options_hide_shorts_widget">Hide Shorts widget</string>
     <string name="settings_advanced_patch_options_hide_shorts_widget_description">Removes Shorts button from launcher widget</string>
 
+    <!-- Settings - Advanced Tab - Other Settings Section -->
+    <string name="settings_advanced_other">Other</string>
+    <string name="settings_advanced_other_auto_unhide">Automatic unhiding of installed apps</string>
+    <string name="settings_advanced_other_auto_unhide_description">Installed apps that where previously hidden are automatically unhidden (restart of the manager is recommended after installing a new app)</string>
+
     <!-- Settings - System Tab - Installer Section -->
     <string name="installer">Installer</string>
     <string name="installer_title">Select installer</string>

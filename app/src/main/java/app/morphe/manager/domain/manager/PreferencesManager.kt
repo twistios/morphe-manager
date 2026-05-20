@@ -63,6 +63,8 @@ class PreferencesManager(
 
     val useExpertMode = booleanPreference("use_expert_mode", false)
 
+    val enableAutoUnhide = booleanPreference("enable_app_auto_unhide", false)
+
     val stripUnusedNativeLibs = booleanPreference("strip_unused_native_libs", false)
 
     /**
@@ -180,6 +182,7 @@ class PreferencesManager(
         val backgroundType: BackgroundType? = null,
         val randomBackgroundInterval: RandomInterval? = null,
         val useExpertMode: Boolean? = null,
+        val enabledAutoUnhide: Boolean? = null,
         val updateCheckInterval: UpdateCheckInterval? = null,
         val customBundles: List<BundleSnapshot>? = null,
         val bytecodeModePreference: BytecodeMode? = null,
@@ -214,6 +217,7 @@ class PreferencesManager(
         backgroundType = backgroundType.get(),
         randomBackgroundInterval = randomBackgroundInterval.get(),
         useExpertMode = useExpertMode.get(),
+        enabledAutoUnhide = enableAutoUnhide.get(),
         updateCheckInterval = updateCheckInterval.get(),
         bytecodeModePreference = bytecodeModePreference.get(),
     )
@@ -247,6 +251,7 @@ class PreferencesManager(
         snapshot.backgroundType?.let { backgroundType.value = it }
         snapshot.randomBackgroundInterval?.let { randomBackgroundInterval.value = it }
         snapshot.useExpertMode?.let { useExpertMode.value = it }
+        snapshot.enabledAutoUnhide?.let { enableAutoUnhide.value = it }
         snapshot.updateCheckInterval?.let { updateCheckInterval.value = it }
         snapshot.bytecodeModePreference?.let { bytecodeModePreference.value = it }
     }

@@ -541,6 +541,12 @@ Die Bildgrößen müssen wie folgt sein:
     <string name="settings_advanced_patch_options_hide_shorts_app_shortcut_description">Entfernt Shorts aus dem Kontextmenü des Launchers bei langem Drücken</string>
     <string name="settings_advanced_patch_options_hide_shorts_widget">Shorts-Widget ausblenden</string>
     <string name="settings_advanced_patch_options_hide_shorts_widget_description">Entfernt die Shorts-Schaltfläche vom Launcher-Widget</string>
+
+    <!-- Settings - Advanced Tab - Other Settings Section -->
+    <string name="settings_advanced_other">Sonstiges</string>
+    <string name="settings_advanced_other_auto_unhide">Automatisches Anzeigen von installieren Apps</string>
+    <string name="settings_advanced_other_auto_unhide_description">Apps werden automatisch wieder gezeigt, welche vorher versteckt waren und installiert sind (Neustart des Managers nach Installation einer App empfohlen)</string>
+
     <!-- Settings - System Tab - Installer Section -->
     <string name="installer">Installer</string>
     <string name="installer_title">Installer auswählen</string>

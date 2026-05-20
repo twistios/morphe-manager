@@ -182,6 +182,10 @@ class SettingsViewModel(
         prefs.useExpertMode.update(enabled)
     }
 
+    fun setEnableAutoUnhide(enabled: Boolean) = viewModelScope.launch {
+        prefs.enableAutoUnhide.update(enabled)
+    }
+
     fun setProcessRuntime(enabled: Boolean) = viewModelScope.launch {
         prefs.useProcessRuntime.update(enabled)
     }

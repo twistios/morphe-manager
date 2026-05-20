@@ -41,6 +41,7 @@ fun AdvancedTabContent(
 ) {
     val prefs = settingsViewModel.prefs
     val useExpertMode by prefs.useExpertMode.getAsState()
+    val enableAutoUnhide by prefs.enableAutoUnhide.getAsState()
     val stripUnusedNativeLibs by prefs.stripUnusedNativeLibs.getAsState()
 
     // Notify VM on expert mode changes so it can derive showExpertModeNotice
@@ -179,6 +180,32 @@ fun AdvancedTabContent(
                 }
             }
         }
+
+        SectionTitle(
+            text = stringResource(R.string.settings_advanced_other),
+            icon = Icons.Outlined.Info
+        )
+
+        RichSettingsItem(
+            onClick = {
+                settingsViewModel.setEnableAutoUnhide(!enableAutoUnhide)
+            },
+            showBorder = true,
+            leadingContent = {
+                MorpheIcon(icon = Icons.Outlined.Refresh)
+            },
+            title = stringResource(R.string.settings_advanced_other_auto_unhide),
+            subtitle = stringResource(R.string.settings_advanced_other_auto_unhide_description),
+            trailingContent = {
+                MorpheSwitch(
+                    checked = enableAutoUnhide,
+                    onCheckedChange = null,
+                    modifier = Modifier.semantics {
+                        stateDescription = if (enableAutoUnhide) enabledState else disabledState
+                    }
+                )
+            }
+        )
     }
 }
 

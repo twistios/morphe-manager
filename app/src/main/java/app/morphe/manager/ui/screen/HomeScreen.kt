@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
@@ -85,6 +86,27 @@ fun HomeScreen(
     val homeAppState by homeViewModel.homeAppState.collectAsStateWithLifecycle()
     val homeAppItems = homeAppState?.visible ?: emptyList()
     val hiddenAppItems = homeAppState?.hidden ?: emptyList()
+
+    // auto unhide apps that are installed if relevant setting is set
+    var unhideAppsDone by rememberSaveable {
+        mutableStateOf(true)
+    }
+    val unhideEnabled by prefs.enableAutoUnhide.getAsState()
+    LaunchedEffect(unhideEnabled) {
+        if (unhideEnabled && unhideAppsDone){
+            unhideAppsDone = false
+        }
+    }
+    LaunchedEffect(unhideAppsDone, hiddenAppItems) {
+        if(unhideAppsDone || hiddenAppItems.isEmpty()) {
+            return@LaunchedEffect
+        }
+        hiddenAppItems
+            .filter { it.packageInfo != null }
+            .forEach { homeViewModel.unhideApp(it.packageName) }
+        unhideAppsDone = true
+    }
+
     val bundlePipelineLoading = homeAppState == null
     val showOtherAppsButton by homeViewModel.showOtherAppsButton.collectAsStateWithLifecycle()
     val showSearchButton by homeViewModel.showSearchButton.collectAsStateWithLifecycle()
